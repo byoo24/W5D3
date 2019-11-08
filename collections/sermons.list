@@ -1,7 +1,8 @@
-{.section collection.categories}
+{.var @currentCategory categoryFilter}
+{.repeated section collection.categories}
     <div class="sermons-categories">
         <ul class="categories-list">
-            <li>{@}</li>
+            <li {.equal? @ @currentCategory}class="active"{.end}>{@}</li>
         </ul>
     </div>
 {.end}
