@@ -1,4 +1,18 @@
 {.repeated section items}
+    <article id="sermons-{id}" class="{@|item-classes}" data-item-id="{id}">
+        <header class="sermons-header">
+            <h1>{title}</h1>
+        </header>
+        <div class="sermons-content">
+            {.excerpt?}
+                <div class="sermons-excerpt">{excerpt}</div>
+            {.or}
+                {.section body}
+                    <div class="sermons-body">{@}</div>
+                {.end}
+            {.end}
+        </div>
+    </article>
     <h1>{title}</h1>
 
 {.end}
