@@ -1,4 +1,18 @@
+
 {.var @currentCategory categoryFilter}
+{.var @sermonsUrl fullUrl}
+{.if collection.categories}
+    <div class="sermons-categories">
+        <ul class="categories-list">
+            {.repeated section collection.categories}
+                <li {.equal? @ @currentCategory}class="active"{.end}>
+                    <a href="{@sermonsUrl}?category={@}">{@}</a>
+                </li>
+            {.end}
+        </ul>
+    </div>
+{.end}
+
 {.repeated section collection.categories}
     <div class="sermons-categories">
         <ul class="categories-list">
