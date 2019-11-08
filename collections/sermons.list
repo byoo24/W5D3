@@ -1,6 +1,6 @@
 
 {.var @currentCategory categoryFilter}
-{.var @sermonsUrl fullUrl}
+{.var @sermonsUrl collection.fullUrl}
 
 {.if collection.categories}
     <div class="cat-index">
