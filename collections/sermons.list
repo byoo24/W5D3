@@ -1,4 +1,4 @@
-{.section items}
+{.repeated section items}
     <h1>{title}</h1>
 
 {.end}
