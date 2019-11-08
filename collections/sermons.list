@@ -1,22 +1,15 @@
 
 {.var @currentCategory categoryFilter}
 {.var @sermonsUrl fullUrl}
+
 {.if collection.categories}
     <div class="sermons-categories">
         <ul class="categories-list">
             {.repeated section collection.categories}
-                <li {.equal? @ @currentCategory}class="active"{.end}>
-                    <a href="{@sermonsUrl}?category={@}">{@}</a>
+                <li>
+                    <a href="{@sermonsUrl}?category={@}" {.equal? @ @currentCategory}class="active"{.end}>{@}</a>
                 </li>
             {.end}
-        </ul>
-    </div>
-{.end}
-
-{.repeated section collection.categories}
-    <div class="sermons-categories">
-        <ul class="categories-list">
-            <li {.equal? @ @currentCategory}class="active"{.end}>{@}</li>
         </ul>
     </div>
 {.end}
@@ -25,6 +18,15 @@
     <article id="sermons-{id}" class="sermons-index-item {@|item-classes}" data-item-id="{id}">
         <header class="sermons-header">
             <h1 class="sermons-title">{title}</h1>
+            {.if categories}
+                <ul class="sermons-categories">
+                    {.repeated section categories}
+                        <li>
+                            <a href="{@sermonsUrl}?category={@}">{@}</a>
+                        </li>
+                    {.end}
+                </ul>
+            {.end}
             <time class="published-year" datetime="{addedOn|date %Y}">{addedOn|date %Y}</time>
         </header>
         <div class="sermons-content">
@@ -37,10 +39,7 @@
             {.end}
         </div>
     </article>
-
 {.end}
-
-
 
 {.if pagination}
     <nav class="pagination clear" data-paginate="scroll">
