@@ -21,7 +21,7 @@
     <article id="sermons-{id}" class="sermons-index-item {@|item-classes}" data-item-id="{id}">
         <header class="sermons-header">
             <h1 class="sermons-title">{title}</h1>
-            <squarespace:category collection="{urlId}">
+            <squarespace:category collection="{collectionId}">
                 {.if categories}
                 <div class="category-wrapper">
                     <span class="category">
