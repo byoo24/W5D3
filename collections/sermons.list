@@ -1,3 +1,11 @@
+{.section collection.categories}
+    <div class="sermons-categories">
+        <ul class="categories-list">
+            <li>{@}</li>
+        </ul>
+    </div>
+{.end}
+
 {.repeated section items}
     <article id="sermons-{id}" class="sermons-index-item {@|item-classes}" data-item-id="{id}">
         <header class="sermons-header">
@@ -15,4 +23,13 @@
         </div>
     </article>
 
+{.end}
+
+
+
+{.if pagination}
+    <nav class="pagination clear" data-paginate="scroll">
+        {.if pagination.prevPage}<div class="newer"><a href="{pagination.prevPageUrl}" rel="prev"><span class="prev-label">Newer Posts</span></a></div>{.end}
+        {.if pagination.nextPage}<div class="older"><a href="{pagination.nextPageUrl}" rel="next"><span class="next-label">Older Posts</span></a></div>{.end}
+    </nav>
 {.end}
