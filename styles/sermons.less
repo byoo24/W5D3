@@ -1,18 +1,33 @@
 .sermons-index-item {
+    margin-bottom: 2em;
+    
+    .sermons-header {
+        position: relative;
+        padding-bottom: 0.75em;
+        margin-bottom: 2.25em;
+        box-sizing: border-box;
 
-    .sermons-header:after {
-        display: block;
-        content: '';
-        border-top: 1px solid lightgrey;
-        margin: 0 -100px;
+        &:after {
+            display: block;
+            position: absolute;
+            content: '';
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-top: 1px solid lightgrey;
+            margin: 0 -100px;
+        }
     }
 
+
     .sermons-title {
-        font-size: 3.5em;
+        font-size: 3.25em;
+        margin: 0;
+        line-height: 1.1;
     }
 
     .published-year {
-        font-size: 16px;
-        color: lightgrey;
+        color: grey;
+        font-weight: 600;
     }
 }
