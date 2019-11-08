@@ -4,7 +4,10 @@
 
 {.if collection.categories}
     <div class="cat-index">
-        <ul class="cat-index-item">
+        <ul class="cat-index-wrap">
+            <li class="cat-item">
+                <a href="{@sermonsUrl}" {.equal? @ @currentCategory}class="active"{.end}>{@}</a>
+            </li>
             {.repeated section collection.categories}
                 <li class="cat-item">
                     <a href="{@sermonsUrl}?category={@}" {.equal? @ @currentCategory}class="active"{.end}>{@}</a>
@@ -18,7 +21,20 @@
     <article id="sermons-{id}" class="sermons-index-item {@|item-classes}" data-item-id="{id}">
         <header class="sermons-header">
             <h1 class="sermons-title">{title}</h1>
-            {.if categories}
+            <squarespace:category collection="{urlId}">
+                {.if categories}
+                <div class="category-wrapper">
+                    <span class="category">
+                        {.repeated section categories}
+                            <a href="{@sermonsUrl}?category={name}">{name}</a>
+                        {.alternates with}, 
+                        {.end}
+                    </span>
+                </div>
+                {.end}
+            </squarespace:category>
+
+            {#  {.if categories}
                 <ul class="sermons-cat-index">
                     {.repeated section categories}
                         <li class="sermons-cat-item">
@@ -26,7 +42,7 @@
                         </li>
                     {.end}
                 </ul>
-            {.end}
+            {.end}  }
         </header>
         <div class="sermons-content">
             {.excerpt?}
