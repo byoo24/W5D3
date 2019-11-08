@@ -3,10 +3,10 @@
 {.var @sermonsUrl fullUrl}
 
 {.if collection.categories}
-    <div class="sermons-categories">
-        <ul class="categories-list">
+    <div class="cat-index">
+        <ul class="cat-index-item">
             {.repeated section collection.categories}
-                <li>
+                <li class="cat-item">
                     <a href="{@sermonsUrl}?category={@}" {.equal? @ @currentCategory}class="active"{.end}>{@}</a>
                 </li>
             {.end}
@@ -19,15 +19,14 @@
         <header class="sermons-header">
             <h1 class="sermons-title">{title}</h1>
             {.if categories}
-                <ul class="sermons-categories">
+                <ul class="sermons-cat-index">
                     {.repeated section categories}
-                        <li>
+                        <li class="sermons-cat-item">
                             <a href="{@sermonsUrl}?category={@}">{@}</a>
                         </li>
                     {.end}
                 </ul>
             {.end}
-            <time class="published-year" datetime="{addedOn|date %Y}">{addedOn|date %Y}</time>
         </header>
         <div class="sermons-content">
             {.excerpt?}
