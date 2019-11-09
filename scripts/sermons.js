@@ -1,2 +1,2 @@
 const sermonIndex = document.querySelector('#sermons-index');
-sermonIndex.scrollIntoView();
+sermonIndex.scrollIntoView({ block: "start" });
