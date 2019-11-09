@@ -33,22 +33,24 @@
 
 
 .sermons-index-item {
-    margin-bottom: 10em;
+    margin-bottom: 3em;
 
     &.full-bleed {
       position: relative;
       width: 100vw;
       left: ~"calc((-100vw + " @width_content ~") / 2 - 100px)";
-      background: lightgrey;
+      background: #f0f0f0;
       overflow: hidden;
 
       .sermons-container {
         max-width: @width_content;
+        .responsive-padding-horizontal(@tweak-site-side-padding);
       }
     }
 
     .sermons-container {
-      padding: 0.5em;
+      padding: 1em;
+      margin: 3em auto;
     }
 
     .sermons-header {
@@ -61,13 +63,8 @@
             display: block;
             position: absolute;
             content: '';
-            right: 0;
             bottom: 0;
-            left: 0;
-            border-top: 1px solid lightgrey;
-            margin: 0 -100px;
-            .reverse-responsive-padding-horizontal(@tweak-site-side-padding);
-
+            border-top: 1px solid black;
         }
     }
 
