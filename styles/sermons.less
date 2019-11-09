@@ -11,31 +11,45 @@
 //  Guarded Mixins
 
 
-.max-padding-horizontal-neg (@padding, @max, @offset: 0) when (@padding > @max) {
+.reverse-max-padding-horizontal (@padding, @max, @offset: 0) when (@padding > @max) {
   margin-left: -1 * @max + @offset;
   margin-right: -1 * @max + @offset;
 }
 
-
 .reverse-responsive-padding-horizontal (@padding, @offset: 0) {
   @media screen and (max-width: 1024px) {
-    .max-padding-horizontal-neg (@padding, @paddingXL, @offset);
+    .reverse-max-padding-horizontal (@padding, @paddingXL, @offset);
   }
   @media screen and (max-width: 960px) {
-    .max-padding-horizontal-neg (@padding, @paddingL, @offset);
+    .reverse-max-padding-horizontal (@padding, @paddingL, @offset);
   }
   @media screen and (max-width: 768px) {
-    .max-padding-horizontal-neg (@padding, @paddingM, @offset);
+    .reverse-max-padding-horizontal (@padding, @paddingM, @offset);
   }
   @media screen and (max-width: 640px) {
-    .max-padding-horizontal-neg (@padding, @paddingS, @offset);
+    .reverse-max-padding-horizontal (@padding, @paddingS, @offset);
   }
 }
 
 
+.sermons-responsive-margin-bottom() {
+  @media screen and (max-width: 1024px) {
+    margin-bottom: 5em;
+  }
+  @media screen and (max-width: 640px) {
+    margin-bottom: 2.5em;
+  }
+}
+
+
+// -----------------------------------------
+
+
+
 
 .cat-index {
-    margin-bottom: 5em;
+    margin-bottom: 10em;
+    .sermons-responsive-margin-bottom();
 
     .cat-index-wrap{
         display: block;
@@ -63,7 +77,8 @@
 
 
 .sermons-index-item {
-    margin-bottom: 5em;
+    margin-bottom: 10em;
+    .sermons-responsive-margin-bottom();
 
     .sermons-header {
         position: relative;
@@ -121,9 +136,9 @@
     float: right;
   }
 
-  .new-sermons,
+  .newer-sermons,
   .older-sermons {
-    &:hover {
+    a:hover {
       font-weight: 600;
     }
   }
