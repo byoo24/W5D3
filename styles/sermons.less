@@ -1,24 +1,64 @@
+
+// =======================================================
+
+//    Responsive Padding + Positioning
+
+// =======================================================
+
+
+// -----------------------------------------
+
+//  Guarded Mixins
+
+
+.max-padding-horizontal-neg (@padding, @max, @offset: 0) when (@padding > @max) {
+  margin-left: -1 * @max + @offset;
+  margin-right: -1 * @max + @offset;
+}
+
+
+.reverse-responsive-padding-horizontal (@padding, @offset: 0) {
+  @media screen and (max-width: 1024px) {
+    .max-padding-horizontal-neg (@padding, @paddingXL, @offset);
+  }
+  @media screen and (max-width: 960px) {
+    .max-padding-horizontal-neg (@padding, @paddingL, @offset);
+  }
+  @media screen and (max-width: 768px) {
+    .max-padding-horizontal-neg (@padding, @paddingM, @offset);
+  }
+  @media screen and (max-width: 640px) {
+    .max-padding-horizontal-neg (@padding, @paddingS, @offset);
+  }
+}
+
+
+
 .cat-index {
+    margin-bottom: 5em;
+
     .cat-index-wrap{
         display: block;
-        margin: 1em 0;
+        margin: 0;
         padding: 0;
         list-style: none;
 
         .cat-item {
             display: inline-block;
+            margin-right: 1.5em;
 
             a {
-                color: #3f51b5;
+                color: #d0d0d0;
+                font-weight: 600;
+
                 &:hover,
                 &.active{
-                    font-weight: 600;
+                    color: #121212;
                     text-decoration: underline;
                 }
             }
         }
     }
-
 }
 
 
@@ -40,17 +80,29 @@
             left: 0;
             border-top: 1px solid lightgrey;
             margin: 0 -100px;
+            .reverse-responsive-padding-horizontal(@tweak-site-side-padding);
+
         }
     }
 
 
     .sermons-title {
-        font-size: 3.25em;
         margin: 0;
         line-height: 1.1;
+        text-transform: none;
+
+        @media screen and (min-width: 641px) {
+            font-size: 3em;
+        }
     }
 
-    .published-year {
-        color: grey;
+    .sermons-cat-index {
+        display: inline-block;
+        margin-top: 0.5em;
+
+        a:hover {
+            font-weight: 600;
+            text-decoration: underline;
+        }
     }
 }
