@@ -2,49 +2,52 @@
 {.var @currentCategory categoryFilter}
 {.var @sermonsUrl collection.fullUrl}
 
-{.if collection.categories}
-    <div class="cat-index">
-        <ul class="cat-index-wrap">
-            <li class="cat-item">
-                <a href="{@sermonsUrl}" {.if @currentCategory}{.or}class="active"{.end}>ALL</a>
-            </li>
-            {.repeated section collection.categories}
+
+<div id="sermons-index">
+    {.if collection.categories}
+        <div class="cat-list">
+            <ul class="cat-list-wrap">
                 <li class="cat-item">
-                    <a href="{@sermonsUrl}?category={@}" {.equal? @ @currentCategory}class="active"{.end}>{@}</a>
+                    <a href="{@sermonsUrl}" {.if @currentCategory}{.or}class="active"{.end}>ALL</a>
                 </li>
-            {.end}
-        </ul>
-    </div>
-{.end}
-
-{.repeated section items}
-    <article id="sermons-{id}" class="sermons-index-item {@|item-classes}" data-item-id="{id}">
-        <header class="sermons-header">
-            <h1 class="sermons-title">{title}</h1>
-            {.if categories}
-                <span class="sermons-cat-index">
-                    {.repeated section categories}
-                        <a href="{@sermonsUrl}?category={@}" class="sermons-cat-item">{@}</a>
-                    {.alternates with}, 
-                    {.end}
-                </span>
-            {.end}
-        </header>
-        <div class="sermons-content">
-            {.excerpt?}
-                <div class="sermons-excerpt">{excerpt}</div>
-            {.or}
-                {.section body}
-                    <div class="sermons-body">{@}</div>
+                {.repeated section collection.categories}
+                    <li class="cat-item">
+                        <a href="{@sermonsUrl}?category={@}" {.equal? @ @currentCategory}class="active"{.end}>{@}</a>
+                    </li>
                 {.end}
-            {.end}
+            </ul>
         </div>
-    </article>
-{.end}
+    {.end}
 
-{.if pagination}
-    <nav class="sermons-pagination" data-paginate="scroll">
-        {.if pagination.prevPage}<div class="newer-sermons"><a href="{pagination.prevPageUrl}" rel="prev"><span class="prev-label">Newer Sermons</span></a></div>{.end}
-        {.if pagination.nextPage}<div class="older-sermons"><a href="{pagination.nextPageUrl}" rel="next"><span class="next-label">Older Sermons</span></a></div>{.end}
-    </nav>
-{.end}
+    {.repeated section items}
+        <article id="sermons-{id}" class="sermons-index-item {@|item-classes}" data-item-id="{id}">
+            <header class="sermons-header">
+                <h1 class="sermons-title">{title}</h1>
+                {.if categories}
+                    <span class="sermons-cat-list">
+                        {.repeated section categories}
+                            <a href="{@sermonsUrl}?category={@}" class="sermons-cat-item">{@}</a>
+                        {.alternates with}, 
+                        {.end}
+                    </span>
+                {.end}
+            </header>
+            <div class="sermons-content">
+                {.excerpt?}
+                    <div class="sermons-excerpt">{excerpt}</div>
+                {.or}
+                    {.section body}
+                        <div class="sermons-body">{@}</div>
+                    {.end}
+                {.end}
+            </div>
+        </article>
+    {.end}
+
+    {.if pagination}
+        <nav class="sermons-pagination" data-paginate="scroll">
+            {.if pagination.prevPage}<div class="newer-sermons"><a href="{@sermonsUrl#sermons-index?offset={pagination.prevPageOffset}&reversePaginate=true}" rel="prev"><span class="prev-label">Newer Sermons</span></a></div>{.end}
+            {.if pagination.nextPage}<div class="older-sermons"><a href="{@sermonsUrl#sermons-index?offset={pagination.nextPageOffset}}" rel="next"><span class="next-label">Older Sermons</span></a></div>{.end}
+        </nav>
+    {.end}
+</div>
