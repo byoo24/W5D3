@@ -46,8 +46,8 @@
 
     {.if pagination}
         <nav class="sermons-pagination" data-paginate="scroll">
-            {.if pagination.prevPage}<div class="newer-sermons"><a href="{pagination.prevPageUrl}" onclick="location.hash='sermons-index';"><span class="prev-label">Newer Sermons</span></a></div>{.end}
-            {.if pagination.nextPage}<div class="older-sermons"><a href="{pagination.nextPageUrl}" onclick="location.hash='sermons-index';"><span class="next-label">Older Sermons</span></a></div>{.end}
+            {.if pagination.prevPage}<div class="newer-sermons"><a href="{pagination.prevPageUrl}" onclick="location.href='{pagination.prevPageUrl}#sermons-index';"><span class="prev-label">Newer Sermons</span></a></div>{.end}
+            {.if pagination.nextPage}<div class="older-sermons"><a href="{pagination.nextPageUrl}" onclick="location.href='{pagination.nextPageUrl}#sermons-index';"><span class="next-label">Older Sermons</span></a></div>{.end}
         </nav>
     {.end}
 </div>
