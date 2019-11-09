@@ -20,7 +20,7 @@
     {.end}
 
     {.repeated section items}
-        {.equal? @index 1}
+        {.odd? @index}
         <article id="sermons-{id}" class="sermons-index-item full-bleed {@|item-classes}" data-item-id="{id}">
         {.or}
         <article id="sermons-{id}" class="sermons-index-item {@|item-classes}" data-item-id="{id}">
