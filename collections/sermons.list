@@ -20,9 +20,9 @@
     {.end}
 
     {.repeated section items}
-        {.even?}
+        {.odd?}
         <article id="sermons-{id}" class="sermons-index-item {@|item-classes}" data-item-id="{id}">
-        {.alternates with}
+        {.or}
         <article id="sermons-{id}" class="sermons-index-item full-bleed {@|item-classes}" data-item-id="{id}">
         {.end}
             <header class="sermons-header">
