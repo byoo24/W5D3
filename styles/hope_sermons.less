@@ -35,6 +35,13 @@
 .sermons-index-item {
     margin-bottom: 10em;
 
+    &.full-bleed {
+      position: relative;
+      width: calc(100vw - 100px);
+      left: calc((-100vw + @width_content) / 2 - 100px);
+      background: lightgrey;
+    }
+
     .sermons-header {
         position: relative;
         padding-bottom: 0.75em;
