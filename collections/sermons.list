@@ -27,7 +27,6 @@
         {.end}
             <div class="sermons-container">
                 <header class="sermons-header">
-                    <h1 class="sermons-title">{title}</h1>
                     {.if categories}
                         <span class="sermons-cat-list">
                             {.repeated section categories}
@@ -36,6 +35,7 @@
                             {.end}
                         </span>
                     {.end}
+                    <h1 class="sermons-title">{title}</h1>
                 </header>
                 <div class="sermons-content">
                     {.excerpt?}
