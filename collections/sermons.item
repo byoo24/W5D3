@@ -1,0 +1,24 @@
+
+{.var @sermonsUrl collection.fullUrl}
+
+
+{.section item}
+    <article id="sermons-{id}" class="sermons-index-item {@|item-classes}" data-item-id="{id}">
+        <header class="sermons-header">
+            <h1 class="sermons-title">{title}</h1>
+            {.if categories}
+                <span class="sermons-cat-index">
+                    {.repeated section categories}
+                        <a href="{@sermonsUrl}?category={@}" class="sermons-cat-item">{@}</a>
+                    {.alternates with}, 
+                    {.end}
+                </span>
+            {.end}
+        </header>
+        <div class="sermons-content">
+            {.section body}
+                <div class="sermons-body">{@}</div>
+            {.end}
+        </div>
+    </article>
+{.end}
