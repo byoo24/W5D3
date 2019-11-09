@@ -20,23 +20,22 @@
 //  Guarded Mixins
 
 
-.reverse-max-padding-horizontal (@padding, @max, @offset: 0) when (@padding > @max) {
-  margin-left: -1 * @max + @offset;
-  margin-right: -1 * @max + @offset;
+.sermons-full-bleed-horizontal (@padding, @max) when (@padding > @max) {
+  left: -@max;
 }
 
-.reverse-responsive-padding-horizontal (@padding, @offset: 0) {
+.sermons-reverse-responsive-padding-horizontal (@padding) {
   @media screen and (max-width: 1024px) {
-    .reverse-max-padding-horizontal (@padding, @paddingXL, @offset);
+    .sermons-full-bleed-horizontal (@padding, @paddingXL);
   }
   @media screen and (max-width: 960px) {
-    .reverse-max-padding-horizontal (@padding, @paddingL, @offset);
+    .sermons-full-bleed-horizontal (@padding, @paddingL);
   }
   @media screen and (max-width: 768px) {
-    .reverse-max-padding-horizontal (@padding, @paddingM, @offset);
+    .sermons-full-bleed-horizontal (@padding, @paddingM);
   }
   @media screen and (max-width: 640px) {
-    .reverse-max-padding-horizontal (@padding, @paddingS, @offset);
+    .sermons-full-bleed-horizontal (@padding, @paddingS);
   }
 }
 
