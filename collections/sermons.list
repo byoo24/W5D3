@@ -20,30 +20,11 @@
     {.end}
 
     {.repeated section items}
-        <article id="sermons-{id}" class="sermons-index-item {@|item-classes}" data-item-id="{id}">
-            <header class="sermons-header">
-                <h1 class="sermons-title">{title}</h1>
-                {.if categories}
-                    <span class="sermons-cat-list">
-                        {.repeated section categories}
-                            <a href="{@sermonsUrl}?category={@}" class="sermons-cat-item">{@}</a>
-                        {.alternates with}, 
-                        {.end}
-                    </span>
-                {.end}
-            </header>
-            <div class="sermons-content">
-                {.excerpt?}
-                    <div class="sermons-excerpt">{excerpt}</div>
-                {.or}
-                    {.section body}
-                        <div class="sermons-body">{@}</div>
-                    {.end}
-                {.end}
-            </div>
-        </article>
-    {.alternates with}
+        {.equal? @index 1}
         <article id="sermons-{id}" class="sermons-index-item full-bleed {@|item-classes}" data-item-id="{id}">
+        {.or}
+        <article id="sermons-{id}" class="sermons-index-item {@|item-classes}" data-item-id="{id}">
+        {.end}
             <header class="sermons-header">
                 <h1 class="sermons-title">{title}</h1>
                 {.if categories}
@@ -65,7 +46,6 @@
                 {.end}
             </div>
         </article>
-        
     {.end}
 
     {.if pagination}
