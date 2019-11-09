@@ -28,7 +28,6 @@
 
 
 .sermons-index-item {
-    margin-bottom: 3em;
 
     &.full-bleed {
       position: relative;
@@ -40,6 +39,7 @@
 
       .sermons-container {
         max-width: @width_content;
+        box-sizing: border-box;
         padding-right: 100px;
         padding-left: 100px;
         .responsive-padding-horizontal(@tweak-site-side-padding);
@@ -47,7 +47,8 @@
     }
 
     .sermons-container {
-      margin: 3em auto;
+      margin: 5em auto;
+      box-sizing: border-box;
     }
 
     .sermons-header {
