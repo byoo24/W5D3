@@ -25,18 +25,21 @@
 }
 
 .sermons-reverse-responsive-padding-horizontal (@padding) {
-  @media screen and (max-width: 1024px) {
-    .sermons-full-bleed-horizontal (@padding, @paddingXL);
-  }
-  @media screen and (max-width: 960px) {
-    .sermons-full-bleed-horizontal (@padding, @paddingL);
-  }
-  @media screen and (max-width: 768px) {
-    .sermons-full-bleed-horizontal (@padding, @paddingM);
-  }
-  @media screen and (max-width: 640px) {
-    .sermons-full-bleed-horizontal (@padding, @paddingS);
-  }
+    @media screen and (max-width: 1440px) {
+        left: -100px;
+    }
+    @media screen and (max-width: 1024px) {
+        .sermons-full-bleed-horizontal (@padding, @paddingXL);
+    }
+    @media screen and (max-width: 960px) {
+        .sermons-full-bleed-horizontal (@padding, @paddingL);
+    }
+    @media screen and (max-width: 768px) {
+        .sermons-full-bleed-horizontal (@padding, @paddingM);
+    }
+    @media screen and (max-width: 640px) {
+        .sermons-full-bleed-horizontal (@padding, @paddingS);
+    }
 }
 
 
