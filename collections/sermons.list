@@ -21,10 +21,9 @@
 
     {.repeated section items}
         {.odd?}
-        <article id="sermons-{id}" class="sermons-index-item {@|item-classes}" data-item-id="{id}">
-        {.or}
-        <article id="sermons-{id}" class="sermons-index-item full-bleed {@|item-classes}" data-item-id="{id}">
+            {@index}
         {.end}
+        <article id="sermons-{id}" class="sermons-index-item full-bleed {@|item-classes}" data-item-id="{id}">
             <header class="sermons-header">
                 <h1 class="sermons-title">{title}</h1>
                 {.if categories}
