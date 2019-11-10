@@ -74,22 +74,6 @@
         </header>
 
         <div class="Content-outer">
-          {.if collection}{.if item}{.or}{.equal? collection.typeName "index"}{.or}
-            {.equal? collection.typeName "page"}
-              {.section collection}
-                {.background-source-video?}
-                  {@|apply intro.block}
-                {.or}
-                  {.if mainImage}
-                    {@|apply intro.block}
-                  {.end}
-                {.end}
-              {.end}
-            {.or}
-              {collection|apply intro.block}
-            {.end}
-          {.end}{.end}{.end}
-
           <main class="{.equal? collection.typeName "index"}Index{.if collection.collections.0}{.or} Index--empty{.end}{.or}Main{.if collection.typeName} Main--{collection.typeName}{.equal? collection.typeName "page"}{.or}{.if item}-item{.or}-list{.end}{.end}{.end}{.end}" {.equal? collection.typeName "index"}data-collection-id="{collection.id}"{.end}{.equal? collection.typeName "index"} data-controller="IndexFirstSectionHeight, Parallax, IndexNavigation"{.end}>
             {.equal? collection.typeName "index"}
               {squarespace.main-content}
