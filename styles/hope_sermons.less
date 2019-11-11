@@ -34,11 +34,11 @@
       width: 100vw;
       background: #f0f0f0;
       overflow: hidden;
-      left: ~"calc((-100vw + " @width_content ~") / 2 - 100px)";
+      left: ~"calc((-100vw + " @tweak-site-width ~") / 2 - 100px)";
       .sermons-reverse-responsive-padding-horizontal(@tweak-site-side-padding);
 
       .sermons-container {
-        max-width: @width_content;
+        max-width: @tweak-site-width;
         box-sizing: border-box;
         padding-right: 100px;
         padding-left: 100px;
