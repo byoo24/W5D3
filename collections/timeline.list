@@ -4,7 +4,7 @@
     <article class="hope_timeline-item">
       <div class="timeline-content">
         <header class="timeline-header">
-          <div class="image-wrapper content-fill" style="width:600px; height:300px; overflow:hidden;">
+          <div class="image-wrapper content-fill">
               {.image?}<img {@|image-meta} data-load="null" data-parent-ratio="1.4" data-image-resolution="1000w" data-image-stretch="false" src={assetUrl} />{.end}
           </div>
         </header>
