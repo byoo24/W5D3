@@ -29,14 +29,19 @@
     background-color: rgba(15, 6, 6, 0.2);
 }
 
-@home-sizeSM: 640px;
-@home-sizeMD: 960px;
-@home-sizeLG: 1280px;
+@home-max-width-SM: 640px;
+@home-max-width-MD: 960px;
+@home-max-width-LG: 1280px;
 
-@home-paddingSM: 120px;
-@home-paddingMD: 240px;
-@home-paddingLG: 360px;
-@home-paddingXL: 480px;
+@home-padding-top-SM: 120px;
+@home-padding-top-MD: 240px;
+@home-padding-top-LG: 360px;
+@home-padding-top-XL: 480px;
+
+@home-border-width-SM: 5em;
+@home-border-width-MD: 10em;
+@home-border-width-LG: 15em;
+@home-border-width-XL: 20em;
 
 
 #home-media,
@@ -46,22 +51,20 @@
     .Index-page-content,
     .Index-page-content{
         max-width: 100%;
-        padding-top: @home-paddingXL;
+        padding-top: @home-padding-top-XL;
         padding-right: 2em;
         padding-left: 2em;
         padding-bottom: 0;
 
-        @media screen and (max-width: @home-sizeLG){
-            padding-top: @home-paddingLG;
+        @media screen and (max-width: @home-max-width-LG){
+            padding-top: @home-padding-top-LG;
         }
-        @media screen and (max-width: @home-sizeMD){
-            padding-top: @home-paddingMD;
+        @media screen and (max-width: @home-max-width-MD){
+            padding-top: @home-padding-top-MD;
         }
-        @media screen and (max-width: @home-sizeSM){
-            padding-top: @home-paddingSM;
+        @media screen and (max-width: @home-max-width-SM){
+            padding-top: @home-padding-top-SM;
         }
-        
-        
     }
 
     &::before,
@@ -69,12 +72,22 @@
         content: '';
         position: absolute;
         bottom: 0;
-        border-width: 10em;
+        border-width: @home-border-width-XL;
         border-color: transparent;
         border-style: solid;
+
+        @media screen and (max-width: @home-max-width-LG){
+            border-width: @home-border-width-LG;
+        }
+        @media screen and (max-width: @home-max-width-MD){
+            border-width: @home-border-width-MD;
+        }
+        @media screen and (max-width: @home-max-width-SM){
+            border-width: @home-border-width-SM;
+        }
     }
 
-    @media screen and (max-width: @home-sizeLG){
+    @media screen and (max-width: @home-max-width-LG){
         border-bottom: 0.5em solid #e0e0e0;
 
         &::before,
@@ -82,10 +95,10 @@
             border-width: 6.5em;
         }
     }
-    @media screen and (max-width: @home-sizeMD){
+    @media screen and (max-width: @home-max-width-MD){
         border-bottom: 0.5em solid #e0e0e0;
     }
-    @media screen and (max-width: @home-sizeSM){
+    @media screen and (max-width: @home-max-width-SM){
         border-bottom: 0.5em solid #e0e0e0;
     }
 }
