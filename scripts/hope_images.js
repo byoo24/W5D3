@@ -31,7 +31,7 @@ const STATE = {
             img.style.width = `${newWidth}px`;
             img.style.height = `${newHeight}px`;
     
-            console.log("focalX:", focalX, "focalY:", focalY);
+            console.log("newWidth:", newWidth, "newHeight:", newHeight);
 
         })
     
