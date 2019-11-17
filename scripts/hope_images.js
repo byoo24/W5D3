@@ -1,4 +1,4 @@
-const hasHopeImageIndex = document.querySelector('has-image-index');
+const hasHopeImageIndex = document.querySelector('.has-image-index');
 
 if(hasHopeImageIndex){
     console.log("ENTERED HOPE INDEX");
