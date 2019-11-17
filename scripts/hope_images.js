@@ -1,11 +1,11 @@
 const STATE = {
     hasIndex: ".has-image-index",
-    parentClass: '.image-wrapper',
+    parentClass: '.hope-image-wrapper',
     childClass: '.image-item'
 }
 
 
-document.addEventListener('DOMContentLoaded', () => {
+// document.addEventListener('DOMContentLoaded', () => {
     const hasHopeImageIndex = document.querySelector(STATE.hasIndex);
     
     if(hasHopeImageIndex){
@@ -24,5 +24,5 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     
     }
-})
+// })
 
