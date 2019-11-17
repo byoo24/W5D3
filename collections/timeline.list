@@ -2,7 +2,6 @@
   <div class="hope_timeline-container">
     {.repeated section items}
     <article class="hope_timeline-item">
-      <div class="timeline-content">
         <header class="thumbnail">
           <div class="image-wrapper content-fill">
               {.image?}<img {@|image-meta} data-load="null" data-parent-ratio="1.4" data-image-resolution="1000w" data-image-stretch="false" src={assetUrl} />{.end}
@@ -15,7 +14,6 @@
         <div class="timeline-meta">
         
         </div>
-      </div>
     </article>
     {.end}
   </div>
