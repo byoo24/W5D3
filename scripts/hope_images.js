@@ -28,11 +28,11 @@ const STATE = {
             let newHeight = (imgHeight / imgWidth) * newWidth;
 
             img.style.position = "relative";
-            img.style.width = newWidth;
-            img.style.height = newHeight;
+            img.style.width = `${newWidth}px`;
+            img.style.height = `${newHeight}px`;
     
             console.log("focalX:", focalX, "focalY:", focalY);
-            
+
         })
     
     }
