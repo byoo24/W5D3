@@ -49,15 +49,17 @@
         padding-left: 2em;
         padding-bottom: 0;
 
-        @media screen and (max-width: @home-sizeSM){
-            padding-top: @home-paddingSM;
+        @media screen and (max-width: @home-sizeLG){
+            padding-top: @home-paddingLG;
         }
         @media screen and (max-width: @home-sizeMD){
             padding-top: @home-paddingMD;
         }
-        @media screen and (max-width: @home-sizeLG){
-            padding-top: @home-paddingLG;
+        @media screen and (max-width: @home-sizeSM){
+            padding-top: @home-paddingSM;
         }
+        
+        
     }
 
     &::before,
@@ -70,12 +72,6 @@
         border-style: solid;
     }
 
-    @media screen and (max-width: @home-sizeSM){
-        border-bottom: 0.5em solid #e0e0e0;
-    }
-    @media screen and (max-width: @home-sizeMD){
-        border-bottom: 0.5em solid #e0e0e0;
-    }
     @media screen and (max-width: @home-sizeLG){
         border-bottom: 0.5em solid #e0e0e0;
 
@@ -83,6 +79,12 @@
         &::before {
             border-width: 6.5em;
         }
+    }
+    @media screen and (max-width: @home-sizeMD){
+        border-bottom: 0.5em solid #e0e0e0;
+    }
+    @media screen and (max-width: @home-sizeSM){
+        border-bottom: 0.5em solid #e0e0e0;
     }
 }
 
