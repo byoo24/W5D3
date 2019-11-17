@@ -2,11 +2,11 @@
   <div class="hope_timeline-container">
     {.repeated section items}
     <article class="hope_timeline-item">
-      <div class="">
+      <header class="hope_timeline-header">
         <div class="image-wrapper content-fill" style="width:300px; height:300px; overflow:hidden;">
             {.image?}<img {@|image-meta} data-load="null" data-parent-ratio="1.4" data-image-resolution="1000w" data-image-stretch="false" src={assetUrl} />{.end}
         </div>
-      </div>
+      </header>
       <div class="timeline-content">
         <div class="timeline-text">
           {.section title}<h1>{@}</h1>{.end}
