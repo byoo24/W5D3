@@ -1,13 +1,13 @@
-<div class="hope_timeline">
+<div class="hope_timeline has-image-index">
   <div class="hope_timeline-container">
     {.repeated section items}
-    <article class="hope_timeline-item list-item list-item--stacked">
+    <article class="hope_timeline-item">
       <div class="timeline-content">
-        <div class="thumbnail">
-          <div class="image-wrapper content-fill" style="height:300px; overflow:hidden;">
-              {.image?}<img {@|image-meta} data-load="null" data-parent-ratio="1.4" data-image-resolution="1000w" data-image-stretch="false" src={assetUrl} />{.end}
+        <header class="timeline-header">
+          <div class="hope-image-wrapper">
+              {.image?}<img {@|image-meta} src={assetUrl} />{.end}
           </div>
-        </div>
+        </header>
         <div class="timeline-text">
           {.section title}<h1>{@}</h1>{.end}
           {.section body}<p>{@|safe}</p>{.end}
