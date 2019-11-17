@@ -17,8 +17,8 @@ const centerImage = (parent) => {
     console.log("focalX:", focalX, "focalY:", focalY);
 
     let dataImageDimensions = child.getAttribute("data-image-dimensions").split('x');
-    let childWidth = parseFloat(dataImageDimensions[0]) || parentWidth;
-    let childHeight = parseFloat(dataImageDimensions[1]) || parentHeight;
+    let childWidth = parseInt(dataImageDimensions[0]) || parentWidth;
+    let childHeight = parseInt(dataImageDimensions[1]) || parentHeight;
     console.log("childWidth:", childWidth, "childHeight:", childHeight);
 
     // (original height / original width) x new width = new height
@@ -30,7 +30,7 @@ const centerImage = (parent) => {
     child.style.height = `${newHeight}px`;
     console.log("newWidth:", newWidth, "newHeight:", newHeight);
 
-    let newTop = (newHeight * focalY) - (childHeight * focalY);
+    let newTop = (newHeight * focalY) - (parentHeight * focalY);
     child.style.top = `${newTop}px`;
     console.log(newTop);
 }
