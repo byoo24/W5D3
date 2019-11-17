@@ -10,15 +10,16 @@
 @home-max-width-LG: 1280px;
 @home-max-width-XL: 1440px;
 
-@home-padding-top-SM: 120px;
-@home-padding-top-MD: 240px;
-@home-padding-top-LG: 360px;
-@home-padding-top-XL: 480px;
+@home-padding-top-MD: 120px;
+@home-padding-top-LG: 240px;
+@home-padding-top-XL: 360px;
+@home-padding-top-XXL: 480px;
 
 @home-border-width-SM: 7em;
 @home-border-width-MD: 12em;
 @home-border-width-LG: 15em;
 @home-border-width-XL: 20em;
+@home-border-width-XXL: 25em;
 
 @section_bg_1: #C85B6C;
 @section_bg_2: #FE7568;
@@ -35,21 +36,25 @@
     .Index-page-content,
     .Index-page-content{
         max-width: 100%;
-        padding-top: @home-padding-top-XL;
+        padding-top: @home-padding-top-XXL;
         padding-bottom: 0;        
 
         @media screen and (max-width: @home-max-width-XL){
-            padding-top: @home-padding-top-LG;
+            padding-top: @home-padding-top-XL;
             h1{ font-size: 45px; }
             h3{ font-size: 24px; }
         }
-        @media screen and (max-width: @home-max-width-MD){
-            padding-top: @home-padding-top-MD;
+        @media screen and (max-width: @home-max-width-LG){
+            padding-top: @home-padding-top-LG;
             h1{ font-size: 36px; }
             h3{ font-size: 20px; }
         }
+        @media screen and (max-width: @home-max-width-MD){
+            padding-top: @home-padding-top-MD;
+            h1{ font-size: 27px; }
+            h3{ font-size: 18px; }
+        }
         @media screen and (max-width: @home-max-width-SM){
-            padding-top: @home-padding-top-SM;
             h1{ font-size: 27px; }
             h3{ font-size: 18px; }
         }
@@ -60,11 +65,14 @@
         content: '';
         position: absolute;
         bottom: 0;
-        border-width: @home-border-width-XL;
+        border-width: @home-border-width-XXL;
         border-color: transparent;
         border-style: solid;
 
         @media screen and (max-width: @home-max-width-XL){
+            border-width: @home-border-width-XL;
+        }
+        @media screen and (max-width: @home-max-width-LG){
             border-width: @home-border-width-LG;
         }
         @media screen and (max-width: @home-max-width-MD){
