@@ -1,49 +1,28 @@
-<div id="thumbList" class="thumb-list clear">
-{.repeated section items}
-<span class="thumb" data-slide-id="{id}">
-  <img data-load="false" {@|image-meta}/>
-  <div class="thumb-title">{title}</div>
-</span>
-{.end}
-</div>
-
-<div id="galleryWrapper">
-  <div id="slideshowWrapper">
-    <div id="slideshow">
-      {.repeated section items}
-        <div class="slide" data-slide-id="{id}" data-slide-url="{urlId}">
-          {.image?}<img {@|image-meta} data-load="false" data-image-stretch="false" />{.end}
-          {.video?}{@|video}{.end}
-          {.if title || body}
-          <div class="image-description">
-            {.section title}<strong>{@}</strong>{.end}{.section body}<span>{@|safe}</span>{.end}
-          </div>
-          {.end}
+<div class="hope_timeline">
+  <div class="hope_timeline-container">
+    {.repeated section items}
+    <article class="hope_timeline-item">
+      <header class="hope_timeline-header">
+        <div class="timeline-thumbnail">
+            {.image?}<img {@|image-meta} data-load="false" data-image-stretch="false" />{.end}
         </div>
-      {.end}
-    </div>
-    <div id="imageInfoToggle"><i></i><span>info</span></div>
-  </div>
-
-  <div id="simpleControls">
-      <span class="control prev-slide">prev</span> / <span class="control next-slide">next</span>
-  </div>
-
-  <div id="numberControls" class="gallery-controls">
-    {.repeated section items}
-      <span class="number">{@index}</span>
+      </header>
+      <div class="timeline-content">
+        <div class="timeline-text">
+          {.section title}<h1>{@}</h1>{.end}
+          {.section body}<p>{@|safe}</p>{.end}
+        </div>
+        <div class="timeline-meta">
+        
+        </div>
+      </div>
+    </article>
     {.end}
   </div>
 
-  <div id="dotControls" class="gallery-controls">
-    {.repeated section items}
-      <span class="dot">&middot;</span>
-    {.end}
-  </div>
-
-  <div id="tinyThumbControls" class="gallery-controls">
-    {.repeated section items}
-      <span class="tiny-thumb"><img src="{assetUrl}?format=100w" height="30" /></span>
-    {.end}
-  </div>
 </div>
+
+
+
+
+
