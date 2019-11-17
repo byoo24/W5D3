@@ -47,5 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         }
     }
+
+    centerImages();
 })
 
