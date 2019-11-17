@@ -18,7 +18,7 @@ if(hasHopeImageIndex){
         let imgHeight = img.offsetHeight;
 
 
-        console.log("img.clientWidth:", imgWidth, "img.clientHeight:", imgHeight, "img.width:", img.width, "img.height:", img.height);
+        console.log("img.offsetWidth:", imgWidth, "img.offsetHeight:", imgHeight, "img.width:", img.width, "img.height:", img.height);
     })
 
 }
