@@ -25,11 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 let imgWidth = img.clientWidth;
                 let imgHeight = img.clientHeight;
 
-                let dataFocalPoints = img.dataset["image-focal-point"].split(',');
+                let dataFocalPoints = img.dataset["image-focal-point"];
                 // let dataFocalPoints = img.getAttribute('data-image-focal-point').split(',');
-                let focalX = dataFocalPoints[0];
-                let focalY = dataFocalPoints[1];
-                console.log("focalX:", focalX, "focalY:", focalY);
+                // let focalX = dataFocalPoints[0];
+                // let focalY = dataFocalPoints[1];
+                // console.log("focalX:", focalX, "focalY:", focalY);
+                console.log("dataFocalPoints:", dataFocalPoints);
 
                 let dataImageDimensions = img.dataset["image-dimensions"];
                 console.log("dataImageDimensions:", dataImageDimensions);
