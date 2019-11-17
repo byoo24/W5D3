@@ -14,8 +14,8 @@ if(hasHopeImageIndex){
         let parentWidth = parent.clientWidth;
         let parentHeight = parent.clientHeight;
         const img = parent.querySelector(STATE.childClass);
-        let imgWidth = img.clientWidth;
-        let imgHeight = img.clientHeight;
+        let imgWidth = img.offsetWidth;
+        let imgHeight = img.offsetHeight;
 
 
         console.log("img.clientWidth:", imgWidth, "img.clientHeight:", imgHeight, "img.width:", img.width, "img.height:", img.height);
