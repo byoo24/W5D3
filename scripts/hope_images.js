@@ -16,11 +16,23 @@ const STATE = {
             let parentWidth = parent.clientWidth;
             let parentHeight = parent.clientHeight;
             const img = parent.querySelector(STATE.childClass);
-            let imgWidth = img.offsetWidth;
-            let imgHeight = img.offsetHeight;
+            let imgWidth = img.clientWidth;
+            let imgHeight = img.clientHeight;
+            let focalPoints = img.getAttribute('data-image-focal-point').split(',');
+            let focalX = focalPoints[0];
+            let focalY = focalPoints[1];
+
+
+            // (original height / original width) x new width = new height
+            let newWidth = parentWidth;
+            let newHeight = (imgHeight / imgWidth) * newWidth;
+
+            img.style.position = "relative";
+            img.style.width = newWidth;
+            img.style.height = newHeight;
     
-    
-            console.log("img.offsetWidth:", imgWidth, "img.offsetHeight:", imgHeight, "img.width:", img.width, "img.height:", img.height);
+            console.log("focalX:", focalX, "focalY:", focalY);
+            
         })
     
     }
