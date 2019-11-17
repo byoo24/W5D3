@@ -11,11 +11,11 @@ if(hasHopeImageIndex){
 
     const imageParents = hasHopeImageIndex.querySelectorAll(STATE.parentClass);
     imageParents.forEach(parent => {
-        let parentWidth = parent.width;
-        let parentHeight = parent.height;
+        let parentWidth = parent.clientWidth;
+        let parentHeight = parent.clientHeight;
         const img = parent.querySelector(STATE.childClass);
-        let imgWidth = img.width;
-        let imgHeight = img.height;
+        let imgWidth = img.clientWidth;
+        let imgHeight = img.clientHeight;
 
 
         console.log(parentWidth, parentHeight, imgWidth, imgHeight);
