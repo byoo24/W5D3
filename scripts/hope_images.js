@@ -30,7 +30,7 @@ const centerImage = (parent) => {
     child.style.height = `${newHeight}px`;
     console.log("newWidth:", newWidth, "newHeight:", newHeight);
 
-    let newTop = (newHeight * focalY) - (parentHeight * focalY);
+    let newTop = (parentHeight * focalY) - (newHeight * focalY) || 0;
     child.style.top = `${newTop}px`;
     console.log(newTop);
 }
