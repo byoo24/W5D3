@@ -31,7 +31,7 @@ const STATE = {
             img.style.width = `${newWidth}px`;
             img.style.height = `${newHeight}px`;
     
-            console.log("newWidth:", newWidth, "newHeight:", newHeight);
+            console.log("imgWidth:", imgWidth, "imgHeight:", imgHeight);
 
         })
     
