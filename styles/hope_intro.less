@@ -1,5 +1,5 @@
 .Index-page-image:before{
-    background-color: rgba(15, 6, 6, 0.2);
+    background-color: rgba(15, 6, 6, 0.3);
 }
 
 
@@ -35,20 +35,22 @@
     .Index-page-content{
         max-width: 100%;
         padding-top: @home-padding-top-XL;
-        padding-bottom: 0;
-        // h1{ font-size: 36px; }
-        
+        padding-bottom: 0;        
 
         @media screen and (max-width: @home-max-width-LG){
             padding-top: @home-padding-top-LG;
+            h1{ font-size: 45px; }
+            h3{ font-size: 24px; }
         }
         @media screen and (max-width: @home-max-width-MD){
             padding-top: @home-padding-top-MD;
             h1{ font-size: 36px; }
-            h3{ font-size: 20px; line-height: 1.3; }
+            h3{ font-size: 20px; }
         }
         @media screen and (max-width: @home-max-width-SM){
             padding-top: @home-padding-top-SM;
+            h1{ font-size: 27px; }
+            h3{ font-size: 18px; }
         }
     }
 
