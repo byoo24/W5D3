@@ -5,7 +5,7 @@ const STATE = {
 }
 
 
-// document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const hasHopeImageIndex = document.querySelector(STATE.hasIndex);
     
     if(hasHopeImageIndex){
@@ -36,5 +36,5 @@ const STATE = {
         })
     
     }
-// })
+})
 
