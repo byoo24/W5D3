@@ -5,7 +5,7 @@
       <div class="timeline-content">
         <header class="timeline-thumbnail">
           <div class="timeline-image-wrapper content-fill">
-              {.image?}<img {@|image-meta} data-load="null" data-parent-ratio="1.4" data-image-resolution="1000w" data-image-stretch="false" src={assetUrl} />{.end}
+              {.image?}<img {@|image-meta} src={assetUrl} />{.end}
           </div>
         </header>
         <div class="timeline-text">
