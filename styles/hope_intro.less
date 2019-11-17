@@ -8,6 +8,7 @@
 @home-max-width-SM: 640px;
 @home-max-width-MD: 960px;
 @home-max-width-LG: 1280px;
+@home-max-width-XL: 1440px;
 
 @home-padding-top-SM: 120px;
 @home-padding-top-MD: 240px;
@@ -37,7 +38,7 @@
         padding-top: @home-padding-top-XL;
         padding-bottom: 0;        
 
-        @media screen and (max-width: @home-max-width-LG){
+        @media screen and (max-width: @home-max-width-XL){
             padding-top: @home-padding-top-LG;
             h1{ font-size: 45px; }
             h3{ font-size: 24px; }
@@ -54,8 +55,8 @@
         }
     }
 
-    &::before,
-    &::before {
+    &::after,
+    &::after {
         content: '';
         position: absolute;
         bottom: 0;
@@ -63,7 +64,7 @@
         border-color: transparent;
         border-style: solid;
 
-        @media screen and (max-width: @home-max-width-LG){
+        @media screen and (max-width: @home-max-width-XL){
             border-width: @home-border-width-LG;
         }
         @media screen and (max-width: @home-max-width-MD){
@@ -86,7 +87,7 @@
 #home-connect {
     border-bottom: 1em solid @section_bg_1;
 
-    &::before {
+    &::after {
         left: 0;
         border-left-color: @section_bg_1;
         border-bottom-color: @section_bg_1;
@@ -96,7 +97,7 @@
 #home-media {
     border-bottom: 1em solid @section_bg_3;
 
-    &::before {
+    &::after {
         right: 0;
         border-right-color: @section_bg_3;
         border-bottom-color: @section_bg_3;
@@ -106,7 +107,7 @@
 #home-serve {
     border-bottom: 1em solid @section_bg_5;
 
-    &::before {
+    &::after {
         left: 0;
         border-left-color: @section_bg_5;
         border-bottom-color: @section_bg_5;
