@@ -3,9 +3,9 @@
     {.repeated section items}
     <article class="hope_timeline-item">
       <div class="timeline-content">
-        <header class="timeline-thumbnail">
-          <div class="timeline-image-wrapper">
-              {.image?}<img {@|image-meta} src={assetUrl} />{.end}
+        <header class="timeline-header">
+          <div class="image-wrapper content-fill" style="width:600px; height:300px; overflow:hidden;">
+              {.image?}<img {@|image-meta} data-load="null" data-parent-ratio="1.4" data-image-resolution="1000w" data-image-stretch="false" src={assetUrl} />{.end}
           </div>
         </header>
         <div class="timeline-text">
