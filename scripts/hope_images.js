@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     centerImage(lazyParent);
 
                     if ((lazyChild.getBoundingClientRect().top <= window.innerHeight && lazyChild.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyChild).display !== "none") {
+                        console.log('true');
                         lazyParent.classList.remove("lazy-wrapper");
 
                         lazyParentImages = lazyParentImages.filter(function (image) {
