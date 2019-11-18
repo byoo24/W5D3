@@ -9,8 +9,8 @@ const STATE = {
 
 const centerImage = (parent) => {
     const child = parent.querySelector('img');
-    const childSrc = parent.getAttribute('data-src');
-    child.src = childSrc;
+    // const childSrc = parent.getAttribute('data-src');
+    // child.src = childSrc;
 
     let parentWidth = parent.clientWidth;
     let parentHeight = parent.clientHeight;
