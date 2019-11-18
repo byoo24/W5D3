@@ -64,8 +64,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     centerImage(lazyParent);
 
-                    if ((lazyChild.getBoundingClientRect().top <= window.innerHeight && lazyChild.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyChild).display !== "none") {
-                        console.log('true');
+                    // if ((lazyChild.getBoundingClientRect().top <= window.innerHeight && lazyChild.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyChild).display !== "none") {
+                        // console.log('true');
                         lazyParent.classList.remove("lazy-wrapper");
 
                         lazyParentImages = lazyParentImages.filter(function (image) {
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             window.removeEventListener("resize", lazyLoad);
                             window.removeEventListener("orientationchange", lazyLoad);
                         }
-                    }
+                    // }
                 })
 
                 // active = false;
