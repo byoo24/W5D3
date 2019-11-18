@@ -13,6 +13,9 @@ const centerImage = (parent) => {
     const childSrc = child.getAttribute('data-src');
     child.src = childSrc;
 
+    console.log("parent:", parent);
+    console.log("child:", child);
+
     let parentWidth = parent.clientWidth;
     let parentHeight = parent.clientHeight;
 
