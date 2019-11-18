@@ -41,7 +41,7 @@ const centerImage = (parent) => {
     child.style.top = `${newTop}px`;
     console.log(newTop);
 
-    let newLeft = (innerWidth * focalX) - (newWidth * focalX) || 0;
+    let newLeft = (newWidth * focalX) - (innerWidth * focalX) || 0;
     child.style.left = `${newLeft}px`;
     console.log(newLeft);
 }
