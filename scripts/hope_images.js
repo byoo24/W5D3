@@ -1,20 +1,16 @@
 const STATE = {
     hasIndex: ".has-image-index",
-    queryParents: '.lazy-wrapper',
-    queryChild: '.image-item'
+    parentClass: '.hope-image-wrapper',
+    childClass: '.image-item'
 }
-
 
 
 
 
 const centerImage = (parent) => {
     const child = parent.querySelector('img');
-    const childSrc = child.getAttribute('data-src');
+    const childSrc = parent.getAttribute('data-src');
     child.src = childSrc;
-
-    console.log("parent:", parent);
-    console.log("child:", child);
 
     let parentWidth = parent.clientWidth;
     let parentHeight = parent.clientHeight;
@@ -45,90 +41,17 @@ const centerImage = (parent) => {
 
 
 
-
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
-    let lazyParentImages = [].slice.call(document.querySelectorAll("queryParents"));
-    let active = false;
-
-    // const lazyLoad = function () {
-        // if (active === false) {
-            // active = true;
-
-            // setTimeout(function () {
-
-                lazyParentImages.forEach(lazyParent => {
-                    let lazyChild = lazyParent.querySelector(queryChild);
-
-                    centerImage(lazyParent);
-
-                    // if ((lazyChild.getBoundingClientRect().top <= window.innerHeight && lazyChild.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyChild).display !== "none") {
-                        // console.log('true');
-                        lazyParent.classList.remove("lazy-wrapper");
-
-                        lazyParentImages = lazyParentImages.filter(function (image) {
-                            return image !== lazyChild;
-                        });
-
-                        if (lazyParentImages.length === 0) {
-                            document.removeEventListener("scroll", lazyLoad);
-                            window.removeEventListener("resize", lazyLoad);
-                            window.removeEventListener("orientationchange", lazyLoad);
-                        }
-                    // }
-                })
-
-                // active = false;
-            // }, 200);
-        // }
-    // };
-
-    // document.addEventListener("scroll", lazyLoad);
-    // window.addEventListener("resize", lazyLoad);
-    // window.addEventListener("orientationchange", lazyLoad);
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     
-//     const hasHopeImageIndex = document.querySelector(STATE.hasIndex);
+    const hasHopeImageIndex = document.querySelector(STATE.hasIndex);
 
-//     if (hasHopeImageIndex !== undefined) {
-//         console.log("ENTERED HOPE INDEX");
-//         const imageParents = hasHopeImageIndex.querySelectorAll(STATE.parentClass);
+    if (hasHopeImageIndex !== undefined) {
+        console.log("ENTERED HOPE INDEX");
+        const imageParents = hasHopeImageIndex.querySelectorAll(STATE.parentClass);
 
-//         imageParents.forEach(parent => {
-            
-            
-//             centerImage(parent);
-            
-
-            
-
-            
-
-            
-
-
-//         })
-//     }
-    
-
-// })
+        imageParents.forEach(parent => {        
+            centerImage(parent);
+        })
+    }
+})
 
