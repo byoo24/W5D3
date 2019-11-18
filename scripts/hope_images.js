@@ -53,11 +53,11 @@ document.addEventListener("DOMContentLoaded", function () {
     let lazyParentImages = [].slice.call(document.querySelectorAll("queryParents"));
     let active = false;
 
-    const lazyLoad = function () {
-        if (active === false) {
-            active = true;
+    // const lazyLoad = function () {
+        // if (active === false) {
+            // active = true;
 
-            setTimeout(function () {
+            // setTimeout(function () {
 
                 lazyParentImages.forEach(lazyParent => {
                     let lazyChild = lazyParent.querySelector(queryChild);
@@ -80,14 +80,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 })
 
-                active = false;
-            }, 200);
-        }
-    };
+                // active = false;
+            // }, 200);
+        // }
+    // };
 
-    document.addEventListener("scroll", lazyLoad);
-    window.addEventListener("resize", lazyLoad);
-    window.addEventListener("orientationchange", lazyLoad);
+    // document.addEventListener("scroll", lazyLoad);
+    // window.addEventListener("resize", lazyLoad);
+    // window.addEventListener("orientationchange", lazyLoad);
 });
 
 
