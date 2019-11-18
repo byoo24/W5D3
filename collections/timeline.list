@@ -5,7 +5,7 @@
       <div class="timeline-content">
         <header class="timeline-header">
           <div class="hope-image-wrapper lazy-wrapper">
-              {.image?}<img {@|image-meta} src={assetUrl} class="image-item" />{.end}
+              {.image?}<img {@|image-meta} class="image-item" />{.end}
           </div>
         </header>
         <div class="timeline-text">
