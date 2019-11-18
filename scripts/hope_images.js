@@ -1,7 +1,8 @@
 const STATE = {
     hasIndex: ".has-image-index",
     parentClass: '.hope-image-wrapper',
-    childClass: '.image-item'
+    childClass: '.image-item',
+    extendedWidth: 1.2
 }
 
 
@@ -29,6 +30,7 @@ const centerImage = (parent) => {
     // (original height / original width) x new width = new height
     let newWidth = parentWidth;
     let newHeight = (childHeight / childWidth) * newWidth;
+    let innerWidth = parentWidth / STATE.extendedWidth;
 
     child.style.position = "relative";
     child.style.width = `${newWidth}px`;
@@ -38,6 +40,10 @@ const centerImage = (parent) => {
     let newTop = (parentHeight * focalY) - (newHeight * focalY) || 0;
     child.style.top = `${newTop}px`;
     console.log(newTop);
+
+    let newLeft = (innerWidth * focalX) - (newWidth * focalX) || 0;
+    child.style.left = newLeft;
+    console.log(newLeft);
 }
 
 
