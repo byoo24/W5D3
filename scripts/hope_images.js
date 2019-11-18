@@ -52,10 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         imageParents.forEach(parent => {        
             centerImage(parent);
-            parent.addEventListener('resize', () => {
-                debugger
-                centerImage(parent)
-            });
+            window.addEventListener('resize', function(){centerImage(parent)});
         })
     }
 })
