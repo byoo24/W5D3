@@ -1,8 +1,8 @@
 const CONSTANT = {
     hasHopeImage: ".has_hope_image",
     thumbnailSearch: '.hope_thumbnail',
-    wrapperSearch: '.image_image-wrapper',
-    imgSearch: '.image_item',
+    wrapperSearch: '.hope_image-wrapper',
+    imgSearch: '.hope_image',
     extendedWidth: 1.2
 }
 
