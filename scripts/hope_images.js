@@ -47,7 +47,7 @@ const centerThumbnailImages = (thumbnail) => {
         }
 
     // (original height / original width) x new width = new height
-    let newWidth = STATE.thumbnailWidth;
+    let newWidth = STATE.wrapperWidth;
     let newHeight = (STATE.imgHeight / STATE.imgWidth) * newWidth;
 
     img.style.position = "relative";
@@ -55,13 +55,13 @@ const centerThumbnailImages = (thumbnail) => {
     img.style.height = `${newHeight}px`;
     console.log("newWidth:", newWidth, "newHeight:", newHeight);
 
-    let newTop = (STATE.thumbnailHeight * focalY) - (newHeight * focalY);
+    let newTop = (STATE.wrapperHeight * focalY) - (newHeight * focalY);
         // newTop = newTop >= 0 ? newTop : 0;
         // newTop = newTop <= STATE.thumbnailHeight ? newTop : STATE.thumbnailHeight;
     img.style.top = `${newTop}px`;
     console.log(newTop);
 
-    let newLeft = (newWidth * focalX) - (STATE.thumbnailWidth * focalX);
+    let newLeft = (STATE.wrapperWidth * focalX) - (newWidth * focalX);
         // newLeft = newLeft >= 0 ? newLeft : 0;
         // newLeft = newLeft <= STATE.thumbnailWidth ? newLeft : STATE.thumbnailWidth; 
     img.style.left = `${newLeft}px`;
