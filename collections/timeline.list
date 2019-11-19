@@ -1,25 +1,28 @@
-<div class="hope_timeline has-image-index">
+<div class="hope_timeline has_hope_image">
   <div class="hope_timeline-container">
-    {.repeated section items}
-    <article class="hope_timeline-item">
-      <div class="timeline-content">
-        <header class="timeline-header">
-          <div class="hope-image-wrapper">
-              {.image?}<img {@|image-meta} class="image-item" />{.end}
-          </div>
-        </header>
-        <div class="timeline-text">
-          {.section title}<h1>{@}</h1>{.end}
-          {.section body}<p>{@|safe}</p>{.end}
-        </div>
-        <div class="timeline-meta">
-        
-        </div>
-      </div>
-    </article>
-    {.end}
-  </div>
 
+    {.repeated section items}
+      <article class="hope_timeline-item">
+        <div class="timeline-content">
+          <header class="timeline-header">
+            <div class="hope_thumbnail">
+              <div class="hope_image-wrapper">
+                {.image?}<img {@|image-meta} class="hope_image" />{.end}
+              </div>
+            </div>
+          </header>
+          <div class="timeline-text">
+            {.section title}<h1>{@}</h1>{.end}
+            {.section body}<p>{@|safe}</p>{.end}
+          </div>
+          <div class="timeline-meta">
+          
+          </div>
+        </div>
+      </article>
+    {.end}
+
+  </div>
 </div>
 
 
