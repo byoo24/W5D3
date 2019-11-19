@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (hasHopeImage) {
         console.log("ENTERED HOPE INDEX");
-        const thumbnails = hasHopeImage.querySelectorAll(CONSTANT.hope_thumbnail);
+        const thumbnails = hasHopeImage.querySelectorAll(CONSTANT.thumbnailSearch);
 
         thumbnails.forEach(thumbnail => {
             centerThumbnailImages(thumbnail);
