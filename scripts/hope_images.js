@@ -56,14 +56,14 @@ const centerThumbnailImages = (thumbnail) => {
     console.log("newWidth:", newWidth, "newHeight:", newHeight);
 
     let newTop = (STATE.thumbnailHeight * focalY) - (newHeight * focalY);
-        newTop = newTop >= 0 ? newTop : 0;
-        newTop = newTop <= STATE.thumbnailHeight ? newTop : STATE.thumbnailHeight;
+        // newTop = newTop >= 0 ? newTop : 0;
+        // newTop = newTop <= STATE.thumbnailHeight ? newTop : STATE.thumbnailHeight;
     img.style.top = `${newTop}px`;
     console.log(newTop);
 
     let newLeft = (newWidth * focalX) - (STATE.thumbnailWidth * focalX);
-        newLeft = newLeft >= 0 ? newLeft : 0;
-        newLeft = newLeft <= STATE.thumbnailWidth ? newLeft : STATE.thumbnailWidth; 
+        // newLeft = newLeft >= 0 ? newLeft : 0;
+        // newLeft = newLeft <= STATE.thumbnailWidth ? newLeft : STATE.thumbnailWidth; 
     img.style.left = `${newLeft}px`;
     console.log(newLeft);
 }
