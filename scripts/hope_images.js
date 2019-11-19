@@ -47,8 +47,15 @@ const centerThumbnailImages = (thumbnail) => {
         }
 
     // (original height / original width) x new width = new height
-    let newWidth = STATE.wrapperWidth;
-    let newHeight = (STATE.imgHeight / STATE.imgWidth) * newWidth;
+    let newWidth, newHeight;
+
+    if(STATE.wrapperHeight > STATE.wrapperWidth){
+        newHeight = STATE.wrapperHeight;
+        newWidth = (STATE.imgWidth / STATE.imgHeight) * newHeight;
+    } else {
+        newWidth = STATE.wrapperWidth;
+        newHeight = (STATE.imgHeight / STATE.imgWidth) * newWidth;
+    }
 
     img.style.position = "relative";
     img.style.width = `${newWidth}px`;
