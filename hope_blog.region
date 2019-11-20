@@ -10,8 +10,6 @@
 
     <div class="Loader"></div>
 
-    {@|apply mobile.block}
-
     <div class="Parallax-host-outer">
       <div class="Parallax-host" data-parallax-host>
         {.equal? collection.typeName "index"}
