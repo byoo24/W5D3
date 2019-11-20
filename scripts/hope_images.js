@@ -26,11 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const centerImagePosition = (parent) => {
         const STATE = {};
-        const imgWrapper = parent.querySelector(CONSTANT.wrapperSearch);
         const img = parent.querySelector(CONSTANT.imgSearch);
 
-        let wrapperWidth = imgWrapper.clientWidth;
-        let wrapperHeight = imgWrapper.clientHeight;
+        let wrapperWidth = parent.clientWidth;
+        let wrapperHeight = parent.clientHeight;
         console.log("wrapperWidth:", wrapperWidth, "wrapperHeight:", wrapperHeight);
 
         let dataFocalPoints = img.getAttribute('data-image-focal-point').split(',');
@@ -71,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(newLeft);
     } // centerImagePosition
 
-    
+
     if (hasHopeImage) {
         const hopeImages = hasHopeImage.querySelectorAll(CONSTANT.wrapperSearch);
 
