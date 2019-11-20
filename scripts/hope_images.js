@@ -59,13 +59,13 @@ document.addEventListener('DOMContentLoaded', () => {
         img.style.height = `${newHeight}px`;
         console.log("newWidth:", newWidth, "newHeight:", newHeight);
 
-        let newTop = getOffsetValue(STATE.wrapperHeight, newHeight, focalY);
-        // let newTop = (STATE.wrapperHeight * focalY) - (newHeight * focalY);
+        let newTop = getOffsetValue(wrapperHeight, newHeight, focalY);
+        // let newTop = (wrapperHeight * focalY) - (newHeight * focalY);
         img.style.top = `${newTop}px`;
         console.log(newTop);
 
-        let newLeft = getOffsetValue(STATE.wrapperWidth, newWidth, focalX);
-        // let newLeft = (STATE.wrapperWidth * focalX) - (newWidth * focalX);
+        let newLeft = getOffsetValue(wrapperWidth, newWidth, focalX);
+        // let newLeft = (wrapperWidth * focalX) - (newWidth * focalX);
         img.style.left = `${newLeft}px`;
         console.log(newLeft);
     } // centerImagePosition
