@@ -17,37 +17,6 @@
 
       <div class="Site-inner{.equal? collection.typeName "index"} Site-inner--index{.end}"{.equal? collection.typeName "index"}{.section collection}{.section collections.0}{.equal? typeName "page"}{.background-source-video?} data-controller="HeaderOverlay"{.or}{.section mainImage} data-controller="HeaderOverlay"{.end}{.end}{.end}{.equal? typeName "gallery"} data-controller="HeaderOverlay"{.end}{.end}{.end}{.or}{.if item}{.or}{.section collection}{.background-source-video?} data-controller="HeaderOverlay"{.or}{.section mainImage} data-controller="HeaderOverlay"{.end}{.end}{.end}{.end}{.end}>
 
-        <header class="Header Header--bottom{.if item}{.or}{.equal? collection.typeName "index"}{.section collection}{.section collections.0}{.equal? typeName "page"}{.background-source-video?} Header--overlay{.or}{.section mainImage} Header--overlay{.end}{.end}{.end}{.equal? typeName "gallery"} Header--index-gallery{.end}{.end}{.end}{.or}{.section collection}{.background-source-video?} Header--overlay{.or}{.section mainImage} Header--overlay{.end}{.end}{.end}{.end}{.end}">
-          <div class="Header-inner Header-inner--bottom" data-nc-group="bottom">
-            <div data-nc-container="bottom-left">
-              <nav class="Header-nav Header-nav--primary" data-nc-element="primary-nav" data-content-field="navigation">
-                <squarespace:navigation navigationId="mainNavigation" template="header-nav" />
-              </nav>
-            </div>
-            <div data-nc-container="bottom-center">
-
-              <a href="/" class="Header-branding" data-nc-element="branding" data-content-field="site-title">
-                {.section website}
-                  {.section logoImageUrl}
-                    <img src="{logoImageUrl}?format=1500w" alt="{siteTitle}" class="Header-branding-logo" />
-                  {.or}
-                    {siteTitle}
-                  {.end}
-                {.end}
-              </a>
-              {.section website}{.section siteTagLine}<div class="Header-tagline" data-nc-element="tagline">{@}</div>{.end}{.end}
-
-            </div>
-            <div data-nc-container="bottom-right">
-
-              <nav class="Header-nav Header-nav--secondary" data-nc-element="secondary-nav" data-content-field="navigation">
-                <squarespace:navigation navigationId="secondaryNavigation" template="header-nav" />
-              </nav>
-
-            </div>
-          </div>
-        </header>
-
         <div class="Content-outer">
           {.if collection}{.if item}{.or}{.equal? collection.typeName "index"}{.or}
             {.equal? collection.typeName "page"}
