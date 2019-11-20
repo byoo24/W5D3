@@ -10,6 +10,49 @@
 
     <div class="Loader"></div>
 
+    {@|apply mobile.block}
+
+    <div class="Parallax-host-outer">
+      <div class="Parallax-host" data-parallax-host>
+        {.equal? collection.typeName "index"}
+          {.section collection}
+            {.repeated section collections}
+              {.var @collectionId id}
+              {.background-source-video?}
+                <div class="Parallax-item" data-parallax-item data-parallax-id="{@collectionId}"></div>
+              {.or}
+                {.section mainImage}
+                  <div class="Parallax-item" data-parallax-item data-parallax-id="{@collectionId}"></div>
+                {.end}
+              {.end}
+            {.end}
+          {.end}
+        {.or}
+          {.equal? collection.typeName "products"}
+          {#  The system Product collection does not support video backgrounds  }
+            {.section collection}
+              {.var @collectionId id}
+              {.section mainImage}
+                <div class="Parallax-item" data-parallax-item data-parallax-id="{@collectionId}"></div>
+              {.end}
+            {.end}
+          {.or}
+            {.if item}{.or}
+              {.section collection}
+                {.var @collectionId id}
+                {.background-source-video?}
+                  <div class="Parallax-item" data-parallax-item data-parallax-id="{@collectionId}"></div>
+                {.or}
+                  {.section mainImage}
+                    <div class="Parallax-item" data-parallax-item data-parallax-id="{@collectionId}"></div>
+                  {.end}
+                {.end}
+              {.end}
+            {.end}
+          {.end}
+        {.end}
+      </div>
+    </div>
 
     <div class="Site" data-nc-base="header" data-controller="AncillaryLayout">
       <div class="sqs-announcement-bar-dropzone"></div>
