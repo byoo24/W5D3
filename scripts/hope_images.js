@@ -25,22 +25,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     const centerImagePosition = (parent) => {
-        const STATE = {};
-        const img = parent.querySelector(CONSTANT.imgSearch);
+        const img = parent.querySelector('img');
 
         let wrapperWidth = parent.clientWidth;
         let wrapperHeight = parent.clientHeight;
-        console.log("wrapperWidth:", wrapperWidth, "wrapperHeight:", wrapperHeight);
 
         let dataFocalPoints = img.getAttribute('data-image-focal-point').split(',');
         let focalX = parseFocalPoint(dataFocalPoints[0]);
         let focalY = parseFocalPoint(dataFocalPoints[1]);
-        console.log("focalX:", focalX, "focalY:", focalY);
 
         let dataImageDimensions = img.getAttribute("data-image-dimensions").split('x');
         let imgWidth = parseInt(dataImageDimensions[0]);
         let imgHeight = parseInt(dataImageDimensions[1]);
-        console.log("imgWidth:", imgWidth, "imgHeight:", imgHeight);
 
 
         // (original height / original width) x new width = new height
@@ -54,18 +50,17 @@ document.addEventListener('DOMContentLoaded', () => {
             newHeight = (imgHeight / imgWidth) * newWidth;
         }
 
+
+        // Set values
         img.style.position = "relative";
         img.style.width = `${newWidth}px`;
         img.style.height = `${newHeight}px`;
-        console.log("newWidth:", newWidth, "newHeight:", newHeight);
 
         let newTop = getOffsetValue(wrapperHeight, newHeight, focalY);
-        // let newTop = (wrapperHeight * focalY) - (newHeight * focalY);
         img.style.top = `${newTop}px`;
         console.log(newTop);
 
         let newLeft = getOffsetValue(wrapperWidth, newWidth, focalX);
-        // let newLeft = (wrapperWidth * focalX) - (newWidth * focalX);
         img.style.left = `${newLeft}px`;
         console.log(newLeft);
     } // centerImagePosition

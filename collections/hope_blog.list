@@ -1,0 +1,36 @@
+<div class="hope_blog-index has_hope_image">
+  <div class="hope_blog-container">
+
+    {.repeated section items}
+      <article class="index_item">
+        <div class="index_container">
+          <header class="index_header">
+            <div class="hope_thumbnail">
+              <div class="hope_image-wrapper">
+                {.image?}<img {@|image-meta} class="hope_image" />{.end}
+              </div>
+            </div>
+          </header>
+          <div class="index_context">
+            {.section title}<h1>{@}</h1>{.end}
+            {.section body}<p>{@|safe}</p>{.end}
+          </div>
+          <div class="index_meta">
+          
+          </div>
+        </div>
+      </article>
+    {.end}
+
+  </div>
+</div>
+
+
+{#  data-src
+data-image
+data-image-dimensions
+data-image-focal-point
+alt  }
+
+
+
