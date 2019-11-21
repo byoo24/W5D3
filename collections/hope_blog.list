@@ -11,11 +11,11 @@
                             <img {@|image-meta} class="hope_image" />
                         </div>
                         {.or}
-                        <div class="hope_no_thumbnail"></div>
+                        <div class="hope_no_image"></div>
                         {.end}
                     </header>
                     <div class="index_context">
-                        {.section title}<h1>{@}</h1>{.end}
+                        {.section title}<h1 class="title">{@}</h1>{.end}
                     </div>
                     <div class="index_meta">
                     
