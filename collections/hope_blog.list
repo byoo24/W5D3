@@ -8,11 +8,11 @@
         <div class="index_container">
           <header class="index_header">
             <div class="hope_thumbnail">
-              <div class="hope_image-wrapper">
                 {.equal? contentType "image/jpeg"}
+                <div class="hope_image-wrapper">
                     <img {@|image-meta} class="hope_image" />
+                </div>
                 {.end}
-              </div>
             </div>
           </header>
           <div class="index_context">
@@ -32,11 +32,11 @@
     {.section items.0}
     <div class="view_container">
         <header class="view_header">
+            {.equal? contentType "image/jpeg"}
             <div class="hope_image-wrapper">
-                {.equal? contentType "image/jpeg"}
-                    <img {@|image-meta} class="hope_image" />
-                {.end}
+                <img {@|image-meta} class="hope_image" />
             </div>
+            {.end}
         </header>
         <div class="view_content">
             <div class="view_content-container">
