@@ -1,8 +1,10 @@
-<div class="hope_blog-index has_hope_image">
+
+
+<section class="hope_blog-index has_hope_image">
   <div class="hope_blog-container">
 
     {.repeated section items}
-      <article class="index_item">
+      <article class="index_item article-#{id}">
         <div class="index_container">
           <header class="index_header">
             <div class="hope_thumbnail">
@@ -13,7 +15,6 @@
           </header>
           <div class="index_context">
             {.section title}<h1>{@}</h1>{.end}
-            {.section body}<p>{@|safe}</p>{.end}
           </div>
           <div class="index_meta">
           
@@ -23,8 +24,24 @@
     {.end}
 
   </div>
-</div>
+</section>
 
+<article class="hope_blog-view has_hope_image">
+    {.section items.0}
+    <div class="view_container">
+        <header class="view_header">
+            <div class="hope_image-wrapper">
+                {.image?}<img {@|image-meta} class="hope_image" />{.end}
+            </div>
+        </header>
+        <div class="view_content">
+            <div class="view_content-container">
+                {body}
+            </div>
+        </div>
+    </div>
+    {.end}
+</article>
 
 {#  data-src
 data-image
