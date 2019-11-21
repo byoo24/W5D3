@@ -9,7 +9,7 @@
           <header class="index_header">
             <div class="hope_thumbnail">
               <div class="hope_image-wrapper">
-                {.image?}<img {@|image-meta} class="hope_image" />{.end}
+                <img {@|image-meta} class="hope_image" />
               </div>
             </div>
           </header>
