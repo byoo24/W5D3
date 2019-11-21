@@ -9,7 +9,9 @@
           <header class="index_header">
             <div class="hope_thumbnail">
               <div class="hope_image-wrapper">
-                <img {@|image-meta} class="hope_image" data-load="false" />
+                {.equal? contentType "image/jpeg"}
+                    <img {@|image-meta} class="hope_image" />
+                {.end}
               </div>
             </div>
           </header>
@@ -31,7 +33,9 @@
     <div class="view_container">
         <header class="view_header">
             <div class="hope_image-wrapper">
-                {.image?}<img {@|image-meta} class="hope_image" />{.end}
+                {.equal? contentType "image/jpeg"}
+                    <img {@|image-meta} class="hope_image" />
+                {.end}
             </div>
         </header>
         <div class="view_content">
