@@ -36,7 +36,7 @@
         </header>
         <div class="view_content">
             <div class="view_content-container">
-                {body}
+                {.section body}<p>{@|safe}</p>{.end}
             </div>
         </div>
     </div>
