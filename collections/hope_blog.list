@@ -4,25 +4,25 @@
         <div class="hope_blog-container">
             {.repeated section items}
             <article id="hope-blog-{id}" class="index_item {@|item-classes}" data-item-id="{id}">
-                <div class="index_container">
-                <header class="index_header">
-                    <div class="hope_thumbnail">
-                        {.equal? contentType "image/jpeg"}
-                        <div class="hope_image-wrapper">
-                            <img {@|image-meta} class="hope_image" />
+                <a class="index_link" href="#">
+                    <header class="index_header">
+                        <div class="hope_thumbnail">
+                            {.equal? contentType "image/jpeg"}
+                            <div class="hope_image-wrapper">
+                                <img {@|image-meta} class="hope_image" />
+                            </div>
+                            {.or}
+                            <div class="no-image"></div>
+                            {.end}
                         </div>
-                        {.or}
-                        <div class="no-image"></div>
-                        {.end}
+                    </header>
+                    <div class="index_context">
+                        {.section title}<h1>{@}</h1>{.end}
                     </div>
-                </header>
-                <div class="index_context">
-                    {.section title}<h1>{@}</h1>{.end}
-                </div>
-                <div class="index_meta">
-                
-                </div>
-                </div>
+                    <div class="index_meta">
+                    
+                    </div>
+                </a>
             </article>
             {.end}
         </div>
