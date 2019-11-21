@@ -11,7 +11,7 @@
                             <img {@|image-meta} class="hope_image" />
                         </div>
                         {.or}
-                        <div class="no-image"></div>
+                        <div class="hope_no_thumbnail"></div>
                         {.end}
                     </header>
                     <div class="index_context">
