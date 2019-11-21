@@ -52,6 +52,11 @@
             {.equal? collection.typeName "index"}
               {squarespace.main-content}
             {.or}
+            {.equal? collection.typeName "hope_blog"}
+                <section class="Main-hope-blog-page" data-content-field="main-content">
+                    {squarespace.main-content}
+              </section>
+            {.or}
               <section class="Main-content" data-content-field="main-content">
                 {squarespace.main-content}
               </section>
