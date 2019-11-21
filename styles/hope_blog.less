@@ -8,30 +8,35 @@
 
 
 .hope_blog-index {
+    position: absolute;
+    width: 50%;
+    background-color: #ededed;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
     .hope_blog-container {
-        position: absolute;
         padding: 1em;
-        width: 50%;
-        background: #fff;
         box-sizing: border-box;
+        
 
         .index_item {
             display: block;
+            position: relative;
+            float: left;
             height: 330px;
             width: 50%;
-            float: left;
-            background: purple;
+            padding: 0 0.5em;
+            margin-bottom: 30px;
             overflow: hidden;
-            position: relative;
             background-color: transparent;
             border-bottom: 2px solid rgba(0,0,0,.2);
-            margin-bottom: 30px;
             -webkit-backface-visibility: hidden;
 
             .index_link {
                 display: block;
                 height: 100%;
                 width: 100%;
+                background-color: #fff;
 
                 .hope_thumbnail {
                     width: 100%;
@@ -59,8 +64,9 @@
 
                 .index_context {
                     display: block;
-                    height: 23%;
-                    overflow:hidden;
+                    height: 20%;
+                    margin: 0.5em 0;
+                    overflow: hidden;
 
                     h1 {
                         display: block;
