@@ -5,16 +5,14 @@
             {.repeated section items}
             <article id="hope-blog-{id}" class="index_item {@|item-classes}" data-item-id="{id}">
                 <a class="index_link" href="#">
-                    <header class="index_header">
-                        <div class="hope_thumbnail">
-                            {.equal? contentType "image/jpeg"}
-                            <div class="hope_image-wrapper">
-                                <img {@|image-meta} class="hope_image" />
-                            </div>
-                            {.or}
-                            <div class="no-image"></div>
-                            {.end}
+                    <header class="hope_thumbnail">
+                        {.equal? contentType "image/jpeg"}
+                        <div class="hope_image-wrapper">
+                            <img {@|image-meta} class="hope_image" />
                         </div>
+                        {.or}
+                        <div class="no-image"></div>
+                        {.end}
                     </header>
                     <div class="index_context">
                         {.section title}<h1>{@}</h1>{.end}
