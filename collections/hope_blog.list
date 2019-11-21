@@ -1,57 +1,57 @@
 
 
-<section class="hope_blog-index has_hope_image">
+<section class="hope_blog-page has_hope_image">
   <div class="hope_blog-container">
 
-    {.repeated section items}
-      <article id="hope-blog-{id}" class="index_item {@|item-classes}" data-item-id="{id}">
-        <div class="index_container">
-          <header class="index_header">
-            <div class="hope_thumbnail">
+    <div class="hope_blog-index">
+        {.repeated section items}
+        <article id="hope-blog-{id}" class="index_item {@|item-classes}" data-item-id="{id}">
+            <div class="index_container">
+            <header class="index_header">
+                <div class="hope_thumbnail">
+                    {.equal? contentType "image/jpeg"}
+                    <div class="hope_image-wrapper">
+                        <img {@|image-meta} class="hope_image" />
+                    </div>
+                    {.or}
+                    <div class="no-image"></div>
+                    {.end}{.end}
+                </div>
+            </header>
+            <div class="index_context">
+                {.section title}<h1>{@}</h1>{.end}
+            </div>
+            <div class="index_meta">
+            
+            </div>
+            </div>
+        </article>
+        {.end}
+    </div>
+
+    <article class="hope_blog-view">
+        {.section items.0}
+        <div class="view_container">
+            <header class="view_header">
                 {.equal? contentType "image/jpeg"}
                 <div class="hope_image-wrapper">
                     <img {@|image-meta} class="hope_image" />
                 </div>
                 {.end}
+            </header>
+            <div class="view_content">
+                <div class="view_content-container">
+                    {.section body}<p>{@|safe}</p>{.end}
+                </div>
             </div>
-          </header>
-          <div class="index_context">
-            {.section title}<h1>{@}</h1>{.end}
-          </div>
-          <div class="index_meta">
-          
-          </div>
         </div>
-      </article>
-    {.end}
-
+        {.end}
+    </article>
   </div>
 </section>
 
-<article class="hope_blog-view has_hope_image">
-    {.section items.0}
-    <div class="view_container">
-        <header class="view_header">
-            {.equal? contentType "image/jpeg"}
-            <div class="hope_image-wrapper">
-                <img {@|image-meta} class="hope_image" />
-            </div>
-            {.end}
-        </header>
-        <div class="view_content">
-            <div class="view_content-container">
-                {.section body}<p>{@|safe}</p>{.end}
-            </div>
-        </div>
-    </div>
-    {.end}
-</article>
 
-{#  data-src
-data-image
-data-image-dimensions
-data-image-focal-point
-alt  }
+
 
 
 

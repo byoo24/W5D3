@@ -66,6 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
     } // centerImagePosition
 
 
+
+    
     if (hasHopeImage) {
         const hopeImages = hasHopeImage.querySelectorAll(CONSTANT.wrapperSearch);
 
