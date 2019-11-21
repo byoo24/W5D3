@@ -15,10 +15,10 @@
 
       <div class="Site-inner{.equal? collection.typeName "index"} Site-inner--index{.end}"{.equal? collection.typeName "index"}{.section collection}{.section collections.0}{.equal? typeName "page"}{.background-source-video?} data-controller="HeaderOverlay"{.or}{.section mainImage} data-controller="HeaderOverlay"{.end}{.end}{.end}{.equal? typeName "gallery"} data-controller="HeaderOverlay"{.end}{.end}{.end}{.or}{.if item}{.or}{.section collection}{.background-source-video?} data-controller="HeaderOverlay"{.or}{.section mainImage} data-controller="HeaderOverlay"{.end}{.end}{.end}{.end}{.end}>
 
-        <header class="Header Header--bottom{.if item}{.or}{.equal? collection.typeName "index"}{.section collection}{.section collections.0}{.equal? typeName "page"}{.background-source-video?} Header--overlay{.or}{.section mainImage} Header--overlay{.end}{.end}{.end}{.equal? typeName "gallery"} Header--index-gallery{.end}{.end}{.end}{.or}{.section collection}{.background-source-video?} Header--overlay{.or}{.section mainImage} Header--overlay{.end}{.end}{.end}{.end}{.end}">
+        <header class="Header {.equal? collection.typeName "hope_blog"}is_hidden{.end} Header--bottom{.if item}{.or}{.equal? collection.typeName "index"}{.section collection}{.section collections.0}{.equal? typeName "page"}{.background-source-video?} Header--overlay{.or}{.section mainImage} Header--overlay{.end}{.end}{.end}{.equal? typeName "gallery"} Header--index-gallery{.end}{.end}{.end}{.or}{.section collection}{.background-source-video?} Header--overlay{.or}{.section mainImage} Header--overlay{.end}{.end}{.end}{.end}{.end}">
           <div class="Header-inner Header-inner--bottom" data-nc-group="bottom">
             <div data-nc-container="bottom-left">
-              <nav class="Header-nav Header-nav--primary {.equal? collection.typeName "hope_blog"}is_hidden{.end}" data-nc-element="primary-nav" data-content-field="navigation">
+              <nav class="Header-nav Header-nav--primary" data-nc-element="primary-nav" data-content-field="navigation">
                 <squarespace:navigation navigationId="mainNavigation" template="header-nav" />
               </nav>
             </div>
@@ -38,7 +38,7 @@
             </div>
             <div data-nc-container="bottom-right">
 
-              <nav class="Header-nav Header-nav--secondary {.equal? collection.typeName "hope_blog"}is_hidden{.end}" data-nc-element="secondary-nav" data-content-field="navigation">
+              <nav class="Header-nav Header-nav--secondary" data-nc-element="secondary-nav" data-content-field="navigation">
                 <squarespace:navigation navigationId="secondaryNavigation" template="header-nav" />
               </nav>
 
@@ -47,6 +47,18 @@
         </header>
 
         <div class="Content-outer">
+
+            <div class="Header-branding">
+                <a href="/" class="Header-branding" data-nc-element="branding" data-content-field="site-title">
+                {.section website}
+                    {.section logoImageUrl}
+                        <img src="{logoImageUrl}?format=1500w" alt="{siteTitle}" class="Header-branding-logo" />
+                    {.or}
+                        {siteTitle}
+                    {.end}
+                {.end}
+                </a>
+            </div>
 
           <main class="{.equal? collection.typeName "index"}Index{.if collection.collections.0}{.or} Index--empty{.end}{.or}Main{.if collection.typeName} Main--{collection.typeName}{.equal? collection.typeName "page"}{.or}{.if item}-item{.or}-list{.end}{.end}{.end}{.end}" {.equal? collection.typeName "index"}data-collection-id="{collection.id}"{.end}{.equal? collection.typeName "index"} data-controller="IndexFirstSectionHeight, Parallax, IndexNavigation"{.end}>
             {.equal? collection.typeName "index"}
