@@ -4,12 +4,12 @@
   <div class="hope_blog-container">
 
     {.repeated section items}
-      <article class="index_item article-#{id}">
+      <article id="hope-blog-{id}" class="index_item {@|item-classes}" data-item-id="{id}">
         <div class="index_container">
           <header class="index_header">
             <div class="hope_thumbnail">
               <div class="hope_image-wrapper">
-                <img {@|image-meta} class="hope_image" />
+                <img {@|image-meta} class="hope_image" data-load="false" />
               </div>
             </div>
           </header>
