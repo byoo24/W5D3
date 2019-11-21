@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <article class="hope_blog-view">
+    <article class="hope_blog-view is_hidden">
         {.section items.0}
         <div class="view_container">
             <header class="view_header">
