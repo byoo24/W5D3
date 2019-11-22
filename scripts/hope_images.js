@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const CONSTANT = {
         hasHopeImage: ".has_hope_image",
-        wrapperSearch: '.index_thumbnail-wrapper'
+        wrapperSearch: '.hope_image-wrapper'
     }
     const hasHopeImage = document.querySelector(CONSTANT.hasHopeImage);
 

@@ -81,7 +81,6 @@
 
     </div>
 
-    <squarespace:script src="site-bundle.js" combo="false" />
     <squarespace:script src="hope_sermons.js" combo="false" />
     <squarespace:script src="hope_images.js" combo="false" />
 
