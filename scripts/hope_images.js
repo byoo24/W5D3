@@ -15,6 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const getOffsetValue = (parentVal, childVal, focalPoint) => {
         return (parentVal * focalPoint) - (childVal * focalPoint);
     }
+    // width: 622px;
+    // height: 933px;
+    // 
 
     const validateImgDimensions = (width, height) => {
         return width !== NaN || height !== NaN;
@@ -23,15 +26,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const getNewImgDimensions = (parentNode, childNode) => {
         // (original height / original width) x new width = new height
         let newWidth = parentNode.width;
-        let newHeight = (childNode.height / childNode.width) * newWidth;
+        let newHeight = (childNode.height / childNode.width) * newWidth * 1.0;
 
         if (newHeight < parentNode.height) {
             newHeight = parentNode.height;
-            newWidth = (childNode.width / childNode.height) * newHeight;
+            newWidth = (childNode.width / childNode.height) * newHeight * 1.0;
         }
 
         return [newWidth, newHeight];
     }
+    // 622.19x941
+    // 2500x3750
 
     
 
@@ -43,11 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // Set Parent(wrapper) values
         parent.width = wrapper.clientWidth;
         parent.height = wrapper.clientHeight;
+        // 622.19x941
 
         // Get Focal Points or default to 0.5
         let dataFocalPoints = img.getAttribute('data-image-focal-point').split(',');
         let focalX = parseFocalPoint(dataFocalPoints[0]);
         let focalY = parseFocalPoint(dataFocalPoints[1]);
+        // 0.9960703592814372,1.0
 
         // Set Child(image) values
         let dataImageDimensions = img.getAttribute("data-image-dimensions").split('x');
@@ -57,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log("invalid image sizes");
             return;
         }
+        // 2500x3750
 
         // Get New Image Dimensions
         let newImageDimensions = getNewImgDimensions(parent, child);
