@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const getNewImgDimensions = (parentNode, childNode) => {
         // (original height / original width) x new width = new height
-        newWidth = parentNode.width;
-        newHeight = (childNode.height / childNode.width) * newWidth;
+        let newWidth = parentNode.width;
+        let newHeight = (childNode.height / childNode.width) * newWidth;
 
         if (newHeight < parentNode.height) {
             newHeight = parentNode.height;
