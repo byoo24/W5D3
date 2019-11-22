@@ -3,6 +3,12 @@
     visibility: hidden !important;
 }
 
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 
 
 
@@ -10,33 +16,31 @@
 .hope_blog-index {
     position: absolute;
     width: 50%;
-    background-color: #ededed;
-    overflow-x: hidden;
-    overflow-y: scroll;
-
+    
     .hope_blog-container {
         padding: 1em;
+        background-color: #ededed;
         box-sizing: border-box;
+        overflow-x: hidden;
+        overflow-y: scroll;
         
-
         .index_item {
             display: block;
             position: relative;
-            float: left;
             height: 330px;
-            width: 50%;
-            padding: 0 0.5em;
             margin-bottom: 30px;
             overflow: hidden;
             background-color: transparent;
-            border-bottom: 2px solid rgba(0,0,0,.2);
-            -webkit-backface-visibility: hidden;
+            
 
             .index_link {
                 display: block;
                 height: 100%;
                 width: 100%;
                 background-color: #fff;
+                border-bottom: 2px solid rgba(0,0,0,.2);
+                box-sizing: border-box;
+                -webkit-backface-visibility: hidden;
 
                 .hope_thumbnail {
                     width: 100%;
@@ -65,7 +69,7 @@
                 .index_context {
                     display: block;
                     height: 20%;
-                    margin: 0.5em 0;
+                    padding: 0.5em;
                     overflow: hidden;
 
                     h1 {

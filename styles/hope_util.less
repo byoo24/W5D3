@@ -13,11 +13,9 @@
 
 
 // =======================================================
-//    Responsive Padding + Positioning
+//    Full Bleed Effect
 // =======================================================
 
-// -----------------------------------------
-//  Guarded Mixins
 
 .sermons-full-bleed-horizontal (@padding, @max) when (@padding > @max) {
   left: -@max;
@@ -44,6 +42,22 @@
 
 
 
+// =======================================================
+//    Grid System
+// =======================================================
+
+.col {
+    float: left;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    box-sizing: border-box;
+}
+
+each(range(4), {
+  .col--@{value} {
+    width: (100% / @value);
+  }
+});
 
 
 
