@@ -1,36 +1,28 @@
-.Index-page-image:before{
-    background-color: rgba(15, 6, 6, 0.3);
+// =======================================================
+//    Mixins
+// =======================================================
+
+.bottom-left-corner-css-triangle (@color) {
+    border-bottom: 1em solid @color;
+
+    &::after {
+        left: 0;
+        border-left-color: @color;
+        border-bottom-color: @color;
+    }
 }
 
+.bottom-right-corner-css-triangle (@color) {
+    border-bottom: 1em solid @color;
 
+    &::after {
+        right: 0;
+        border-right-color: @color;
+        border-bottom-color: @color;
+    }
+}
 
-
-@home-max-width-SM: 640px;
-@home-max-width-MD: 960px;
-@home-max-width-LG: 1280px;
-@home-max-width-XL: 1440px;
-
-@home-padding-top-MD: 120px;
-@home-padding-top-LG: 240px;
-@home-padding-top-XL: 360px;
-@home-padding-top-XXL: 480px;
-
-@home-border-width-SM: 10em;
-@home-border-width-MD: 13em;
-@home-border-width-LG: 17em;
-@home-border-width-XL: 20em;
-@home-border-width-XXL: 25em;
-
-@section_bg_1: #C85B6C;
-@section_bg_2: #FE7568;
-@section_bg_3: #FCCA6C;
-@section_bg_4: #548FCC;
-@section_bg_5: #315B8A;
-
-
-#home-connect,
-#home-media,
-#home-serve {
+.bottom-corner-css-triangle () {
     text-shadow: 1px 1px #0f0f0f;
 
     .Index-page-content,
@@ -91,35 +83,32 @@
     }
 }
 
+// =======================================================
+
+
+
+.Index-page-image:before{
+    background-color: rgba(15, 6, 6, 0.3);
+}
+
+
+#home-connect,
+#home-media,
+#home-serve {
+    .bottom-corner-css-triangle();
+}
+
 
 #home-connect {
-    border-bottom: 1em solid @section_bg_1;
-
-    &::after {
-        left: 0;
-        border-left-color: @section_bg_1;
-        border-bottom-color: @section_bg_1;
-    }
+    .bottom-left-corner-css-triangle(@color__adobe1);
 }
 
 #home-media {
-    border-bottom: 1em solid @section_bg_3;
-
-    &::after {
-        right: 0;
-        border-right-color: @section_bg_3;
-        border-bottom-color: @section_bg_3;
-    }
+    .bottom-right-corner-css-triangle(@color__adobe3);
 }
 
 #home-serve {
-    border-bottom: 1em solid @section_bg_5;
-
-    &::after {
-        left: 0;
-        border-left-color: @section_bg_5;
-        border-bottom-color: @section_bg_5;
-    }
+    .bottom-left-corner-css-triangle(@color__adobe5);
 }
 
 
