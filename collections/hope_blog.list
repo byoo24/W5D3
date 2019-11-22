@@ -11,7 +11,7 @@
                             <img {@|image-meta} />
                         </div>
                         {.or}
-                        <div class="index_noimage"></div>
+                        <div class="hope_noimage"></div>
                         {.end}
                     </header>
                     <div class="index_context">
@@ -34,6 +34,8 @@
                 <div class="hope_image-wrapper">
                     <img {@|image-meta} />
                 </div>
+                {.or}
+                <div class="hope_noimage"></div>
                 {.end}
             </header>
             <div class="view_content">
