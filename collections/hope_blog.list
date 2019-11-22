@@ -1,7 +1,7 @@
 <section class="hope_blog-page has_hope_image">
   
     <div class="hope_blog-index">
-        <div class="hope_blog-container clearfix">
+        <div class="index_container clearfix">
             {.repeated section items}
             <article id="hope-blog-{id}" class="index_item col col--6 {@|item-classes}" data-item-id="{id}">
                 <a class="index_link" href="#">
@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <article class="hope_blog-view is_hidden">
+    <article class="hope_blog-view">
         {.section items.0}
         <div class="view_container">
             <header class="view_header">
