@@ -87,7 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 centerImagePositions(wrapper);
             })
         }
-
+        
+        hopeImages();
         window.addEventListener('resize', hopeImages );
     }
 })
