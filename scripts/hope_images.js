@@ -3,8 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
         hasHopeImage: ".has_hope_image",
         wrapperSearch: '.index_thumbnail-wrapper'
     }
-    
     const hasHopeImage = document.querySelector(CONSTANT.hasHopeImage);
+
 
     const parseFocalPoint = (str) => {
         let focal = parseFloat(str);
@@ -12,14 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
         return focal;
     }
 
-    const getAspectRatio = (num1, num2) => {
-        return num1 / num2;
-    }
-
     const getOffsetValue = (parentVal, childVal, focalPoint) => {
         return (parentVal * focalPoint) - (childVal * focalPoint);
     }
 
+    const validateImgDimensions = (width, height) => {
+        return width !== NaN || height !== NaN;
+    }
 
     const getNewImgDimensions = (parentNode, childNode) => {
         // (original height / original width) x new width = new height
@@ -37,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
 
 
-    const centerImagePosition = (wrapper) => {
+    const centerImagePositions = (wrapper) => {
         const img = wrapper.querySelector('img');
         const parent = {}, child = {};
 
@@ -52,8 +51,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Set Child(image) values
         let dataImageDimensions = img.getAttribute("data-image-dimensions").split('x');
-        child.width = parseInt(dataImageDimensions[0]);
-        child.height = parseInt(dataImageDimensions[1]);
+        child.width = parseFloat(dataImageDimensions[0]);
+        child.height = parseFloat(dataImageDimensions[1]);
+        if (!validateImgDimensions(child.width, child.height)) {
+            console.log("invalid image sizes");
+            return;
+        }
 
         // Get New Image Dimensions
         let newImageDimensions = getNewImgDimensions(parent, child);
@@ -76,15 +79,16 @@ document.addEventListener('DOMContentLoaded', () => {
     } // centerImagePosition
 
 
-
-    
     if (hasHopeImage) {
-        const hopeImages = hasHopeImage.querySelectorAll(CONSTANT.wrapperSearch);
+        const imageWrappers = hasHopeImage.querySelectorAll(CONSTANT.wrapperSearch);
 
-        hopeImages.forEach(image => {
-            centerImagePosition(image);
-            window.addEventListener('resize', function(){ centerImagePosition(image) });
-        })
+        const hopeImages = () => {
+            imageWrappers.forEach(wrapper => {
+                centerImagePosition(wrapper);
+            })
+        }
+
+        window.addEventListener('resize', hopeImages );
     }
 })
 
