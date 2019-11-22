@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Get Focal Points or default to 0.5
         let dataFocalPoints = img.getAttribute('data-image-focal-point').split(',');
+        console.log(dataFocalPoints);
         let focalX = parseFocalPoint(dataFocalPoints[0]);
         let focalY = parseFocalPoint(dataFocalPoints[1]);
 
@@ -71,11 +72,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Set Offset Values
         let newTop = getOffsetValue(parent.height, newHeight, focalY);
         img.style.top = `${newTop}px`;
-        console.log(newTop);
 
         let newLeft = getOffsetValue(parent.width, newWidth, focalX);
         img.style.left = `${newLeft}px`;
-        console.log(newLeft);
     } // centerImagePosition
 
 
@@ -87,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 centerImagePositions(wrapper);
             })
         }
-        
+
         hopeImages();
         window.addEventListener('resize', hopeImages );
     }
