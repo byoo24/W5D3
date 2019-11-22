@@ -3,7 +3,7 @@
     <div class="hope_blog-index">
         <div class="hope_blog-container clearfix">
             {.repeated section items}
-            <article id="hope-blog-{id}" class="index_item {@|item-classes}" data-item-id="{id}">
+            <article id="hope-blog-{id}" class="index_item col col--6 {@|item-classes}" data-item-id="{id}">
                 <a class="index_link" href="#">
                     <header class="hope_thumbnail">
                         {.equal? contentType "image/jpeg"}
