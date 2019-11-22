@@ -46,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Get Focal Points or default to 0.5
         let dataFocalPoints = img.getAttribute('data-image-focal-point').split(',');
-        console.log(dataFocalPoints);
         let focalX = parseFocalPoint(dataFocalPoints[0]);
         let focalY = parseFocalPoint(dataFocalPoints[1]);
 
@@ -76,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let newLeft = getOffsetValue(parent.width, newWidth, focalX);
         img.style.left = `${newLeft}px`;
     } // centerImagePosition
+
 
 
     if (hasHopeImage) {
