@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         }
 
-        window.addEventListener('resize', hopeImages );
+        window.addEventListener('resize', () => {hopeImages()} );
     }
 })
 
