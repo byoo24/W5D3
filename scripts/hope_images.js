@@ -84,11 +84,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const hopeImages = () => {
             imageWrappers.forEach(wrapper => {
-                centerImagePosition(wrapper);
+                centerImagePositions(wrapper);
             })
         }
 
-        window.addEventListener('resize', () => {hopeImages()} );
+        window.addEventListener('resize', hopeImages );
     }
 })
 
