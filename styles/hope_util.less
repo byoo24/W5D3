@@ -55,7 +55,7 @@
 
 each(range(12), {
   .col--@{value} {
-    width: (100% / @value);
+    width: ~"(100% / " @value ~")";
   }
 });
 
